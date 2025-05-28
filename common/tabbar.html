@@ -33,8 +33,8 @@
         if (
           currentPath.includes("/home") ||
           currentPath === "/" ||
-          currentPath.endsWith("/pr/") ||
-          currentPath.endsWith("/pr/index.html")
+          currentPath.endsWith("/") ||
+          currentPath.endsWith("/index.html")
         ) {
           homeTab.classList.remove("tab-inactive");
           homeTab.classList.add("tab-active");
@@ -52,33 +52,32 @@
         // 为所有链接添加点击事件，在iframe环境中改变父页面的导航
         homeTab.addEventListener("click", function (e) {
           e.preventDefault();
-          navigateParentFrame("/pr/home.html");
+          navigateParentFrame("/home.html");
         });
 
         resumeTab.addEventListener("click", function (e) {
           e.preventDefault();
-          navigateParentFrame("/pr/resume/list.html");
+          navigateParentFrame("/resume/list.html");
         });
 
         serviceTab.addEventListener("click", function (e) {
           e.preventDefault();
-          navigateParentFrame("/pr/service/list.html");
+          navigateParentFrame("/service/list.html");
         });
 
         profileTab.addEventListener("click", function (e) {
           e.preventDefault();
-          navigateParentFrame("/pr/profile/index.html");
+          navigateParentFrame("/profile/index.html");
         });
       };
 
       // 在iframe环境中控制父页面导航
       function navigateParentFrame(fullPath) {
         try {
-          // 从完整路径中提取相对于pr目录的路径
+          // 从完整路径中提取相对路径
           let relativePath = fullPath;
-          const prIndex = fullPath.indexOf("/pr/");
-          if (prIndex !== -1) {
-            relativePath = fullPath.substring(prIndex + 4); // +4 跳过"/pr/"
+          if (relativePath.startsWith("/")) {
+            relativePath = relativePath.substring(1); // 移除开头的斜杠
           }
 
           console.log("导航到相对路径:", relativePath);

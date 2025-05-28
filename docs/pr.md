@@ -179,14 +179,14 @@
 
 ### 4.2 文件结构
 
-- 所有原型文件必须输出在根目录下的 `pr` 文件夹中
-- `pr/index.html` - 入口页面，包含所有页面的 iframe 展示
-- `pr/login.html` - 登录页面
-- `pr/home.html` - 首页
-- `pr/resume/` - 简历相关页面
-- `pr/service/` - 服务相关页面
-- `pr/profile/` - 个人中心页面
-- `pr/common/` - 公共组件和样式
+- 所有原型文件位于项目根目录
+- `index.html` - 入口页面，包含所有页面的 iframe 展示
+- `login.html` - 登录页面
+- `home.html` - 首页
+- `resume/` - 简历相关页面
+- `service/` - 服务相关页面
+- `profile/` - 个人中心页面
+- `common/` - 公共组件、样式、图片
 
 ### 4.3 Tailwind CSS 实现指南
 
@@ -195,10 +195,7 @@
 在每个 HTML 文件的 `<head>` 中添加以下 CDN 链接：
 
 ```html
-<link
-  href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-  rel="stylesheet"
-/>
+<script src="https://cdn.tailwindcss.com"></script>
 ```
 
 #### 4.3.2 示例代码
