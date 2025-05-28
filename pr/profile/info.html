@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人信息 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="index.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">个人信息</h1>
+        <button
+          id="edit-btn"
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+        >
+          编辑
+        </button>
+      </div>
+    </div>
+
+    <!-- 用户头像 -->
+    <div class="bg-white shadow-sm">
+      <div class="px-4 py-5 flex flex-col items-center">
+        <div
+          class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center text-2xl font-bold text-purple-600 mb-3"
+        >
+          张
+        </div>
+        <div class="text-base font-medium">张先生</div>
+        <div class="text-sm text-gray-500 mt-1">高级产品经理</div>
+      </div>
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="px-4 mt-4">
+      <div class="bg-white rounded-xl shadow">
+        <div class="p-4 border-b border-gray-100">
+          <h2 class="text-base font-medium text-gray-900">基本信息</h2>
+        </div>
+
+        <!-- 姓名 -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-100"
+        >
+          <div class="text-gray-600">姓名</div>
+          <div class="text-gray-900 info-value" data-field="name">张先生</div>
+          <div class="hidden info-edit">
+            <input
+              type="text"
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              value="张先生"
+              data-field="name"
+            />
+          </div>
+        </div>
+
+        <!-- 性别 -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-100"
+        >
+          <div class="text-gray-600">性别</div>
+          <div class="text-gray-900 info-value" data-field="gender">男</div>
+          <div class="hidden info-edit">
+            <select
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              data-field="gender"
+            >
+              <option value="男">男</option>
+              <option value="女">女</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 出生日期 -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-100"
+        >
+          <div class="text-gray-600">出生日期</div>
+          <div class="text-gray-900 info-value" data-field="birthday">
+            1990-01-15
+          </div>
+          <div class="hidden info-edit">
+            <input
+              type="date"
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              value="1990-01-15"
+              data-field="birthday"
+            />
+          </div>
+        </div>
+
+        <!-- 所在地 -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-100"
+        >
+          <div class="text-gray-600">所在地</div>
+          <div class="text-gray-900 info-value" data-field="location">
+            北京市
+          </div>
+          <div class="hidden info-edit">
+            <input
+              type="text"
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              value="北京市"
+              data-field="location"
+            />
+          </div>
+        </div>
+
+        <!-- 工作年限 -->
+        <div class="flex items-center justify-between p-4">
+          <div class="text-gray-600">工作年限</div>
+          <div class="text-gray-900 info-value" data-field="experience">
+            4年
+          </div>
+          <div class="hidden info-edit">
+            <select
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              data-field="experience"
+            >
+              <option value="应届生">应届生</option>
+              <option value="1年以下">1年以下</option>
+              <option value="1-3年">1-3年</option>
+              <option value="3-5年" selected>3-5年</option>
+              <option value="5-10年">5-10年</option>
+              <option value="10年以上">10年以上</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="px-4 mt-4 mb-6">
+      <div class="bg-white rounded-xl shadow">
+        <div class="p-4 border-b border-gray-100">
+          <h2 class="text-base font-medium text-gray-900">联系方式</h2>
+        </div>
+
+        <!-- 手机号 -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-gray-100"
+        >
+          <div class="text-gray-600">手机号</div>
+          <div class="text-gray-900 info-value" data-field="phone">
+            138****5678
+          </div>
+          <div class="hidden info-edit">
+            <input
+              type="tel"
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              value="13812345678"
+              data-field="phone"
+            />
+          </div>
+        </div>
+
+        <!-- 邮箱 -->
+        <div class="flex items-center justify-between p-4">
+          <div class="text-gray-600">邮箱</div>
+          <div class="text-gray-900 info-value" data-field="email">
+            zhang@example.com
+          </div>
+          <div class="hidden info-edit">
+            <input
+              type="email"
+              class="border border-gray-300 rounded-md px-3 py-1 text-sm w-32"
+              value="zhang@example.com"
+              data-field="email"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 编辑模式下的保存按钮 -->
+    <div
+      id="save-bar"
+      class="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-center px-4 hidden"
+    >
+      <button
+        id="save-btn"
+        class="bg-purple-600 text-white py-2.5 px-8 rounded-md text-sm font-medium w-full"
+      >
+        保存修改
+      </button>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+      id="tabbar"
+    ></iframe>
+
+    <script>
+      // 编辑和保存功能
+      const editBtn = document.getElementById("edit-btn");
+      const saveBtn = document.getElementById("save-btn");
+      const saveBar = document.getElementById("save-bar");
+      const tabbar = document.getElementById("tabbar");
+      const infoValues = document.querySelectorAll(".info-value");
+      const infoEdits = document.querySelectorAll(".info-edit");
+
+      // 切换到编辑模式
+      editBtn.addEventListener("click", () => {
+        if (editBtn.textContent === "编辑") {
+          // 切换到编辑模式
+          editBtn.textContent = "取消";
+          tabbar.classList.add("hidden");
+          saveBar.classList.remove("hidden");
+
+          infoValues.forEach((el) => el.classList.add("hidden"));
+          infoEdits.forEach((el) => el.classList.remove("hidden"));
+        } else {
+          // 取消编辑
+          editBtn.textContent = "编辑";
+          tabbar.classList.remove("hidden");
+          saveBar.classList.add("hidden");
+
+          infoValues.forEach((el) => el.classList.remove("hidden"));
+          infoEdits.forEach((el) => el.classList.add("hidden"));
+        }
+      });
+
+      // 保存修改
+      saveBtn.addEventListener("click", () => {
+        // 获取所有输入值
+        const newValues = {};
+        const inputs = document.querySelectorAll(
+          ".info-edit input, .info-edit select"
+        );
+        inputs.forEach((input) => {
+          const field = input.getAttribute("data-field");
+          newValues[field] = input.value;
+        });
+
+        // 更新显示的值
+        infoValues.forEach((el) => {
+          const field = el.getAttribute("data-field");
+          if (newValues[field]) {
+            // 特殊处理电话号码，显示时隐藏中间部分
+            if (field === "phone") {
+              const phone = newValues[field];
+              el.textContent =
+                phone.substring(0, 3) + "****" + phone.substring(7);
+            } else {
+              el.textContent = newValues[field];
+            }
+          }
+        });
+
+        // 切换回查看模式
+        editBtn.textContent = "编辑";
+        tabbar.classList.remove("hidden");
+        saveBar.classList.add("hidden");
+
+        infoValues.forEach((el) => el.classList.remove("hidden"));
+        infoEdits.forEach((el) => el.classList.add("hidden"));
+
+        // 显示保存成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm";
+        toast.textContent = "保存成功";
+        document.body.appendChild(toast);
+
+        // 2秒后移除提示
+        setTimeout(() => {
+          toast.remove();
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑项目经历 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="detail.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">编辑项目经历</h1>
+        <button
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+          id="save-btn"
+        >
+          保存
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单内容 -->
+    <div class="px-4 mt-4">
+      <form id="project-form">
+        <!-- 项目经历列表 -->
+        <div id="project-list">
+          <!-- 项目经历项1 -->
+          <div class="project-item bg-white rounded-xl shadow mb-4">
+            <div
+              class="p-4 border-b border-gray-100 flex justify-between items-center"
+            >
+              <h2 class="text-base font-medium text-gray-900">项目经历 1</h2>
+              <button type="button" class="delete-btn text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 项目名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label
+                for="project-name-1"
+                class="block text-sm text-gray-600 mb-1"
+                >项目名称</label
+              >
+              <input
+                type="text"
+                id="project-name-1"
+                name="project-name-1"
+                value="智慧社区移动应用"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 项目岗位 -->
+            <div class="p-4 border-b border-gray-100">
+              <label
+                for="project-role-1"
+                class="block text-sm text-gray-600 mb-1"
+                >项目岗位</label
+              >
+              <input
+                type="text"
+                id="project-role-1"
+                name="project-role-1"
+                value="产品负责人"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 项目时间 -->
+            <div class="p-4 border-b border-gray-100">
+              <label class="block text-sm text-gray-600 mb-2">项目时间</label>
+              <div class="flex flex-col space-y-3">
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >开始时间</label
+                  >
+                  <input
+                    type="month"
+                    id="start-date-1"
+                    name="start-date-1"
+                    value="2021-03"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >结束时间</label
+                  >
+                  <div class="flex items-center">
+                    <input
+                      type="month"
+                      id="end-date-1"
+                      name="end-date-1"
+                      class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                      disabled
+                    />
+                    <label
+                      class="inline-flex items-center ml-2 whitespace-nowrap"
+                    >
+                      <input
+                        type="checkbox"
+                        id="present-1"
+                        name="present-1"
+                        checked
+                        class="text-purple-600 focus:ring-purple-500"
+                      />
+                      <span class="ml-1 text-sm text-gray-900">至今</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 项目内容 -->
+            <div class="p-4 border-b border-gray-100">
+              <label
+                for="project-description-1"
+                class="block text-sm text-gray-600 mb-1"
+                >项目内容</label
+              >
+              <textarea
+                id="project-description-1"
+                name="project-description-1"
+                rows="4"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+负责智慧社区移动应用从0到1的产品规划和设计，定义核心功能包括物业服务、社区活动、邻里社交、智能家居控制等模块。主导产品需求分析、用户调研和产品原型设计，与研发团队紧密协作推进开发进度，定期进行用户测试和功能优化。</textarea
+              >
+            </div>
+
+            <!-- 项目业绩 -->
+            <div class="p-4">
+              <label
+                for="project-achievement-1"
+                class="block text-sm text-gray-600 mb-1"
+                >项目业绩</label
+              >
+              <textarea
+                id="project-achievement-1"
+                name="project-achievement-1"
+                rows="3"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+应用上线3个月内获得10万用户，月活跃率达65%，用户满意度达4.7分（满分5分）。通过持续优化，物业服务响应效率提升40%，用户投诉率下降30%。项目荣获2022年智慧社区创新应用奖。</textarea
+              >
+            </div>
+          </div>
+
+          <!-- 项目经历项2 -->
+          <div class="project-item bg-white rounded-xl shadow mb-4">
+            <div
+              class="p-4 border-b border-gray-100 flex justify-between items-center"
+            >
+              <h2 class="text-base font-medium text-gray-900">项目经历 2</h2>
+              <button type="button" class="delete-btn text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 项目名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label
+                for="project-name-2"
+                class="block text-sm text-gray-600 mb-1"
+                >项目名称</label
+              >
+              <input
+                type="text"
+                id="project-name-2"
+                name="project-name-2"
+                value="企业内部管理系统升级"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 项目岗位 -->
+            <div class="p-4 border-b border-gray-100">
+              <label
+                for="project-role-2"
+                class="block text-sm text-gray-600 mb-1"
+                >项目岗位</label
+              >
+              <input
+                type="text"
+                id="project-role-2"
+                name="project-role-2"
+                value="产品经理"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 项目时间 -->
+            <div class="p-4 border-b border-gray-100">
+              <label class="block text-sm text-gray-600 mb-2">项目时间</label>
+              <div class="flex flex-col space-y-3">
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >开始时间</label
+                  >
+                  <input
+                    type="month"
+                    id="start-date-2"
+                    name="start-date-2"
+                    value="2019-10"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >结束时间</label
+                  >
+                  <input
+                    type="month"
+                    id="end-date-2"
+                    name="end-date-2"
+                    value="2020-12"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- 项目内容 -->
+            <div class="p-4 border-b border-gray-100">
+              <label
+                for="project-description-2"
+                class="block text-sm text-gray-600 mb-1"
+                >项目内容</label
+              >
+              <textarea
+                id="project-description-2"
+                name="project-description-2"
+                rows="4"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+负责企业内部管理系统的用户体验优化和功能升级，包括人事管理、绩效考核、项目追踪和资源分配等模块。通过用户访谈和数据分析识别现有系统痛点，重新设计工作流程和界面交互，提升系统易用性。主导需求文档编写和功能优先级排序，协调研发团队按计划实施改造。</textarea
+              >
+            </div>
+
+            <!-- 项目业绩 -->
+            <div class="p-4">
+              <label
+                for="project-achievement-2"
+                class="block text-sm text-gray-600 mb-1"
+                >项目业绩</label
+              >
+              <textarea
+                id="project-achievement-2"
+                name="project-achievement-2"
+                rows="3"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+系统升级后，员工日常操作效率提升35%，系统操作错误率下降50%，员工满意度从之前的68%提升至92%。优化的工作流程为公司每年节省约200万人力成本，并显著提高了跨部门协作效率。</textarea
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 添加项目经历按钮 -->
+        <button
+          type="button"
+          id="add-project-btn"
+          class="w-full bg-gray-100 text-gray-600 py-3 rounded-xl mb-6 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+          添加项目经历
+        </button>
+      </form>
+    </div>
+
+    <!-- 删除确认对话框 -->
+    <div
+      id="delete-confirm"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+    >
+      <div class="bg-white rounded-xl p-5 w-5/6 max-w-sm">
+        <h3 class="text-base font-medium text-gray-900 mb-3">确认删除</h3>
+        <p class="text-sm text-gray-600 mb-5">
+          确定要删除这段项目经历吗？此操作不可恢复。
+        </p>
+        <div class="flex space-x-3">
+          <button
+            id="delete-cancel"
+            class="flex-1 py-2 border border-gray-300 text-gray-700 rounded-md text-sm"
+          >
+            取消
+          </button>
+          <button
+            id="delete-confirm-btn"
+            class="flex-1 py-2 bg-red-500 text-white rounded-md text-sm"
+          >
+            确认删除
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="px-4 mb-4">
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            提示：项目经历是展示您专业能力的重要部分，重点描述您的项目角色、主要职责和取得的成果，尽量使用数据量化您的贡献。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 初始化变量
+      let currentProjectItemCount = 2;
+      let deleteTargetItem = null;
+
+      // 获取元素
+      const projectForm = document.getElementById("project-form");
+      const projectList = document.getElementById("project-list");
+      const addProjectBtn = document.getElementById("add-project-btn");
+      const saveBtn = document.getElementById("save-btn");
+      const deleteConfirm = document.getElementById("delete-confirm");
+      const deleteCancel = document.getElementById("delete-cancel");
+      const deleteConfirmBtn = document.getElementById("delete-confirm-btn");
+
+      // 添加新项目经历
+      addProjectBtn.addEventListener("click", () => {
+        currentProjectItemCount++;
+
+        const newProjectItem = document.createElement("div");
+        newProjectItem.className =
+          "project-item bg-white rounded-xl shadow mb-4";
+        newProjectItem.innerHTML = `
+          <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-base font-medium text-gray-900">项目经历 ${currentProjectItemCount}</h2>
+            <button type="button" class="delete-btn text-red-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- 项目名称 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="project-name-${currentProjectItemCount}" class="block text-sm text-gray-600 mb-1">项目名称</label>
+            <input type="text" id="project-name-${currentProjectItemCount}" name="project-name-${currentProjectItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" required />
+          </div>
+          
+          <!-- 项目岗位 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="project-role-${currentProjectItemCount}" class="block text-sm text-gray-600 mb-1">项目岗位</label>
+            <input type="text" id="project-role-${currentProjectItemCount}" name="project-role-${currentProjectItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" required />
+          </div>
+          
+          <!-- 项目时间 -->
+          <div class="p-4 border-b border-gray-100">
+            <label class="block text-sm text-gray-600 mb-2">项目时间</label>
+            <div class="flex flex-col space-y-3">
+              <div class="w-full">
+                <label class="text-xs text-gray-500 mb-1 block">开始时间</label>
+                <input type="month" id="start-date-${currentProjectItemCount}" name="start-date-${currentProjectItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" />
+              </div>
+              <div class="w-full">
+                <label class="text-xs text-gray-500 mb-1 block">结束时间</label>
+                <div class="flex items-center">
+                  <input type="month" id="end-date-${currentProjectItemCount}" name="end-date-${currentProjectItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" />
+                  <label class="inline-flex items-center ml-2 whitespace-nowrap">
+                    <input type="checkbox" id="present-${currentProjectItemCount}" name="present-${currentProjectItemCount}" class="text-purple-600 focus:ring-purple-500" />
+                    <span class="ml-1 text-sm text-gray-900">至今</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 项目内容 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="project-description-${currentProjectItemCount}" class="block text-sm text-gray-600 mb-1">项目内容</label>
+            <textarea id="project-description-${currentProjectItemCount}" name="project-description-${currentProjectItemCount}" rows="4" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" placeholder="请描述项目背景、您的职责和具体工作内容"></textarea>
+          </div>
+          
+          <!-- 项目业绩 -->
+          <div class="p-4">
+            <label for="project-achievement-${currentProjectItemCount}" class="block text-sm text-gray-600 mb-1">项目业绩</label>
+            <textarea id="project-achievement-${currentProjectItemCount}" name="project-achievement-${currentProjectItemCount}" rows="3" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" placeholder="请描述项目取得的成果和您的贡献，尽量使用数据量化成果"></textarea>
+          </div>
+        `;
+
+        projectList.appendChild(newProjectItem);
+
+        // 添加事件监听器
+        const presentCheckbox = document.getElementById(
+          `present-${currentProjectItemCount}`
+        );
+        const endDateInput = document.getElementById(
+          `end-date-${currentProjectItemCount}`
+        );
+
+        presentCheckbox.addEventListener("change", () => {
+          endDateInput.disabled = presentCheckbox.checked;
+          if (presentCheckbox.checked) {
+            endDateInput.value = "";
+          }
+        });
+
+        const deleteBtn = newProjectItem.querySelector(".delete-btn");
+        deleteBtn.addEventListener("click", (e) => {
+          showDeleteConfirm(e.target.closest(".project-item"));
+        });
+      });
+
+      // 至今复选框事件
+      document
+        .getElementById("present-1")
+        .addEventListener("change", function () {
+          document.getElementById("end-date-1").disabled = this.checked;
+          if (this.checked) {
+            document.getElementById("end-date-1").value = "";
+          }
+        });
+
+      // 删除按钮事件
+      document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          showDeleteConfirm(e.target.closest(".project-item"));
+        });
+      });
+
+      // 显示删除确认对话框
+      function showDeleteConfirm(projectItem) {
+        deleteTargetItem = projectItem;
+        deleteConfirm.classList.remove("hidden");
+      }
+
+      // 取消删除
+      deleteCancel.addEventListener("click", () => {
+        deleteConfirm.classList.add("hidden");
+        deleteTargetItem = null;
+      });
+
+      // 确认删除
+      deleteConfirmBtn.addEventListener("click", () => {
+        if (deleteTargetItem) {
+          deleteTargetItem.remove();
+          deleteConfirm.classList.add("hidden");
+          deleteTargetItem = null;
+
+          // 重新排序项目经历标题
+          const projectItems = document.querySelectorAll(".project-item");
+          projectItems.forEach((item, index) => {
+            const title = item.querySelector("h2");
+            title.textContent = `项目经历 ${index + 1}`;
+          });
+        }
+      });
+
+      // 保存表单
+      saveBtn.addEventListener("click", () => {
+        // 在实际应用中，这里应该发送表单数据到服务器
+        // 为了演示，我们直接返回到详情页
+
+        // 显示保存成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = "保存成功";
+        document.body.appendChild(toast);
+
+        // 2秒后跳转
+        setTimeout(() => {
+          window.location.href = "detail.html";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

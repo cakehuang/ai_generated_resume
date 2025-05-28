@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑工作经历 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="edit-info.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">编辑工作经历</h1>
+        <button
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+          id="save-btn"
+        >
+          保存
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单内容 -->
+    <div class="px-4 mt-4">
+      <form id="work-form">
+        <!-- 工作经历列表 -->
+        <div id="work-list">
+          <!-- 工作经历项1 -->
+          <div class="work-item bg-white rounded-xl shadow mb-4">
+            <div
+              class="p-4 border-b border-gray-100 flex justify-between items-center"
+            >
+              <h2 class="text-base font-medium text-gray-900">工作经历 1</h2>
+              <button type="button" class="delete-btn text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 公司名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="company-1" class="block text-sm text-gray-600 mb-1"
+                >公司名称</label
+              >
+              <input
+                type="text"
+                id="company-1"
+                name="company-1"
+                value="智慧科技有限公司"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 职位名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="position-1" class="block text-sm text-gray-600 mb-1"
+                >职位名称</label
+              >
+              <input
+                type="text"
+                id="position-1"
+                name="position-1"
+                value="高级产品经理"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 工作时间 -->
+            <div class="p-4 border-b border-gray-100">
+              <label class="block text-sm text-gray-600 mb-2">工作时间</label>
+              <div class="flex flex-col space-y-3">
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >开始时间</label
+                  >
+                  <input
+                    type="month"
+                    id="start-date-1"
+                    name="start-date-1"
+                    value="2020-07"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >结束时间</label
+                  >
+                  <div class="flex items-center">
+                    <input
+                      type="month"
+                      id="end-date-1"
+                      name="end-date-1"
+                      class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                      disabled
+                    />
+                    <label
+                      class="inline-flex items-center ml-2 whitespace-nowrap"
+                    >
+                      <input
+                        type="checkbox"
+                        id="present-1"
+                        name="present-1"
+                        checked
+                        class="text-purple-600 focus:ring-purple-500"
+                      />
+                      <span class="ml-1 text-sm text-gray-900">至今</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 工作内容 -->
+            <div class="p-4">
+              <label
+                for="description-1"
+                class="block text-sm text-gray-600 mb-1"
+                >工作内容</label
+              >
+              <textarea
+                id="description-1"
+                name="description-1"
+                rows="4"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+负责公司核心产品的需求分析、产品规划和迭代优化，主导了产品从0到1的设计和开发，带领团队完成多次重大版本迭代，产品月活用户增长300%。负责与研发、设计和业务团队的协作，保障产品按时高质量交付。</textarea
+              >
+            </div>
+          </div>
+
+          <!-- 工作经历项2 -->
+          <div class="work-item bg-white rounded-xl shadow mb-4">
+            <div
+              class="p-4 border-b border-gray-100 flex justify-between items-center"
+            >
+              <h2 class="text-base font-medium text-gray-900">工作经历 2</h2>
+              <button type="button" class="delete-btn text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 公司名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="company-2" class="block text-sm text-gray-600 mb-1"
+                >公司名称</label
+              >
+              <input
+                type="text"
+                id="company-2"
+                name="company-2"
+                value="创新网络科技有限公司"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 职位名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="position-2" class="block text-sm text-gray-600 mb-1"
+                >职位名称</label
+              >
+              <input
+                type="text"
+                id="position-2"
+                name="position-2"
+                value="产品经理"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 工作时间 -->
+            <div class="p-4 border-b border-gray-100">
+              <label class="block text-sm text-gray-600 mb-2">工作时间</label>
+              <div class="flex flex-col space-y-3">
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >开始时间</label
+                  >
+                  <input
+                    type="month"
+                    id="start-date-2"
+                    name="start-date-2"
+                    value="2017-03"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >结束时间</label
+                  >
+                  <input
+                    type="month"
+                    id="end-date-2"
+                    name="end-date-2"
+                    value="2020-06"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- 工作内容 -->
+            <div class="p-4">
+              <label
+                for="description-2"
+                class="block text-sm text-gray-600 mb-1"
+                >工作内容</label
+              >
+              <textarea
+                id="description-2"
+                name="description-2"
+                rows="4"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+负责公司电商平台的产品设计和需求管理，参与产品战略规划和功能优化，完成了支付系统升级和物流系统改造等多个重点项目，提升了用户转化率和留存率。</textarea
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 添加工作经历按钮 -->
+        <button
+          type="button"
+          id="add-work-btn"
+          class="w-full bg-gray-100 text-gray-600 py-3 rounded-xl mb-6 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+          添加工作经历
+        </button>
+      </form>
+    </div>
+
+    <!-- 删除确认对话框 -->
+    <div
+      id="delete-confirm"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+    >
+      <div class="bg-white rounded-xl p-5 w-5/6 max-w-sm">
+        <h3 class="text-base font-medium text-gray-900 mb-3">确认删除</h3>
+        <p class="text-sm text-gray-600 mb-5">
+          确定要删除这段工作经历吗？此操作不可恢复。
+        </p>
+        <div class="flex space-x-3">
+          <button
+            id="delete-cancel"
+            class="flex-1 py-2 border border-gray-300 text-gray-700 rounded-md text-sm"
+          >
+            取消
+          </button>
+          <button
+            id="delete-confirm-btn"
+            class="flex-1 py-2 bg-red-500 text-white rounded-md text-sm"
+          >
+            确认删除
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="px-4 mb-4">
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            提示：按照时间从近到远的顺序填写工作经历，突出您的职责和成果，最好使用量化的数据来展示您的成就。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 初始化变量
+      let currentWorkItemCount = 2;
+      let deleteTargetItem = null;
+
+      // 获取元素
+      const workForm = document.getElementById("work-form");
+      const workList = document.getElementById("work-list");
+      const addWorkBtn = document.getElementById("add-work-btn");
+      const saveBtn = document.getElementById("save-btn");
+      const deleteConfirm = document.getElementById("delete-confirm");
+      const deleteCancel = document.getElementById("delete-cancel");
+      const deleteConfirmBtn = document.getElementById("delete-confirm-btn");
+
+      // 添加新工作经历
+      addWorkBtn.addEventListener("click", () => {
+        currentWorkItemCount++;
+
+        const newWorkItem = document.createElement("div");
+        newWorkItem.className = "work-item bg-white rounded-xl shadow mb-4";
+        newWorkItem.innerHTML = `
+          <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-base font-medium text-gray-900">工作经历 ${currentWorkItemCount}</h2>
+            <button type="button" class="delete-btn text-red-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- 公司名称 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="company-${currentWorkItemCount}" class="block text-sm text-gray-600 mb-1">公司名称</label>
+            <input type="text" id="company-${currentWorkItemCount}" name="company-${currentWorkItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" required />
+          </div>
+          
+          <!-- 职位名称 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="position-${currentWorkItemCount}" class="block text-sm text-gray-600 mb-1">职位名称</label>
+            <input type="text" id="position-${currentWorkItemCount}" name="position-${currentWorkItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" required />
+          </div>
+          
+          <!-- 工作时间 -->
+          <div class="p-4 border-b border-gray-100">
+            <label class="block text-sm text-gray-600 mb-2">工作时间</label>
+            <div class="flex flex-col space-y-3">
+              <div class="w-full">
+                <label class="text-xs text-gray-500 mb-1 block">开始时间</label>
+                <input type="month" id="start-date-${currentWorkItemCount}" name="start-date-${currentWorkItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" />
+              </div>
+              <div class="w-full">
+                <label class="text-xs text-gray-500 mb-1 block">结束时间</label>
+                <div class="flex items-center">
+                  <input type="month" id="end-date-${currentWorkItemCount}" name="end-date-${currentWorkItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" />
+                  <label class="inline-flex items-center ml-2">
+                    <input type="checkbox" id="present-${currentWorkItemCount}" name="present-${currentWorkItemCount}" class="text-purple-600 focus:ring-purple-500" />
+                    <span class="ml-1 text-sm text-gray-900">至今</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 工作内容 -->
+          <div class="p-4">
+            <label for="description-${currentWorkItemCount}" class="block text-sm text-gray-600 mb-1">工作内容</label>
+            <textarea id="description-${currentWorkItemCount}" name="description-${currentWorkItemCount}" rows="4" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"></textarea>
+          </div>
+        `;
+
+        workList.appendChild(newWorkItem);
+
+        // 添加事件监听器
+        const presentCheckbox = document.getElementById(
+          `present-${currentWorkItemCount}`
+        );
+        const endDateInput = document.getElementById(
+          `end-date-${currentWorkItemCount}`
+        );
+
+        presentCheckbox.addEventListener("change", () => {
+          endDateInput.disabled = presentCheckbox.checked;
+          if (presentCheckbox.checked) {
+            endDateInput.value = "";
+          }
+        });
+
+        const deleteBtn = newWorkItem.querySelector(".delete-btn");
+        deleteBtn.addEventListener("click", (e) => {
+          showDeleteConfirm(e.target.closest(".work-item"));
+        });
+      });
+
+      // 至今复选框事件
+      document
+        .getElementById("present-1")
+        .addEventListener("change", function () {
+          document.getElementById("end-date-1").disabled = this.checked;
+          if (this.checked) {
+            document.getElementById("end-date-1").value = "";
+          }
+        });
+
+      // 删除按钮事件
+      document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          showDeleteConfirm(e.target.closest(".work-item"));
+        });
+      });
+
+      // 显示删除确认对话框
+      function showDeleteConfirm(workItem) {
+        deleteTargetItem = workItem;
+        deleteConfirm.classList.remove("hidden");
+      }
+
+      // 取消删除
+      deleteCancel.addEventListener("click", () => {
+        deleteConfirm.classList.add("hidden");
+        deleteTargetItem = null;
+      });
+
+      // 确认删除
+      deleteConfirmBtn.addEventListener("click", () => {
+        if (deleteTargetItem) {
+          deleteTargetItem.remove();
+          deleteConfirm.classList.add("hidden");
+          deleteTargetItem = null;
+
+          // 重新排序工作经历标题
+          const workItems = document.querySelectorAll(".work-item");
+          workItems.forEach((item, index) => {
+            const title = item.querySelector("h2");
+            title.textContent = `工作经历 ${index + 1}`;
+          });
+        }
+      });
+
+      // 保存表单
+      saveBtn.addEventListener("click", () => {
+        // 在实际应用中，这里应该发送表单数据到服务器
+        // 为了演示，我们直接返回到详情页
+
+        // 显示保存成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = "保存成功";
+        document.body.appendChild(toast);
+
+        // 2秒后跳转
+        setTimeout(() => {
+          window.location.href = "detail.html";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

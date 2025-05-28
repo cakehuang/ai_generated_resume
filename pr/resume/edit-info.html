@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑个人信息 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="detail.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">编辑个人信息</h1>
+        <button
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+          id="save-btn"
+        >
+          保存
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单内容 -->
+    <div class="px-4 mt-4">
+      <form id="info-form">
+        <!-- 基本信息 -->
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">基本信息</h2>
+          </div>
+
+          <!-- 姓名 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="name" class="block text-sm text-gray-600 mb-1"
+              >姓名</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="张先生"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              required
+            />
+          </div>
+
+          <!-- 性别 -->
+          <div class="p-4 border-b border-gray-100">
+            <label class="block text-sm text-gray-600 mb-1">性别</label>
+            <div class="flex items-center space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="男"
+                  class="text-purple-600 focus:ring-purple-500"
+                  checked
+                />
+                <span class="ml-2 text-gray-900">男</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="女"
+                  class="text-purple-600 focus:ring-purple-500"
+                />
+                <span class="ml-2 text-gray-900">女</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 出生日期 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="birthday" class="block text-sm text-gray-600 mb-1"
+              >出生日期</label
+            >
+            <input
+              type="date"
+              id="birthday"
+              name="birthday"
+              value="1990-01-15"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+
+          <!-- 所在地 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="location" class="block text-sm text-gray-600 mb-1"
+              >所在地</label
+            >
+            <input
+              type="text"
+              id="location"
+              name="location"
+              value="北京市"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+
+          <!-- 工作年限 -->
+          <div class="p-4">
+            <label for="experience" class="block text-sm text-gray-600 mb-1"
+              >工作年限</label
+            >
+            <select
+              id="experience"
+              name="experience"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+              <option value="应届生">应届生</option>
+              <option value="1年以下">1年以下</option>
+              <option value="1-3年">1-3年</option>
+              <option value="3-5年" selected>3-5年</option>
+              <option value="5-10年">5-10年</option>
+              <option value="10年以上">10年以上</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="bg-white rounded-xl shadow mb-6">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">联系方式</h2>
+          </div>
+
+          <!-- 手机号码 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="phone" class="block text-sm text-gray-600 mb-1"
+              >手机号码</label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="13812345678"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+
+          <!-- 邮箱 -->
+          <div class="p-4">
+            <label for="email" class="block text-sm text-gray-600 mb-1"
+              >邮箱</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="zhang@example.com"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+        </div>
+
+        <!-- 职业信息 -->
+        <div class="bg-white rounded-xl shadow mb-6">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">职业信息</h2>
+          </div>
+
+          <!-- 当前职位 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="job-title" class="block text-sm text-gray-600 mb-1"
+              >当前职位</label
+            >
+            <input
+              type="text"
+              id="job-title"
+              name="job-title"
+              value="高级产品经理"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+
+          <!-- 行业 -->
+          <div class="p-4">
+            <label for="industry" class="block text-sm text-gray-600 mb-1"
+              >所在行业</label
+            >
+            <select
+              id="industry"
+              name="industry"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+              <option>请选择行业</option>
+              <option value="互联网/IT" selected>互联网/IT</option>
+              <option value="金融">金融</option>
+              <option value="教育">教育</option>
+              <option value="医疗健康">医疗健康</option>
+              <option value="电子商务">电子商务</option>
+              <option value="文化创意">文化创意</option>
+              <option value="房地产">房地产</option>
+              <option value="制造业">制造业</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="px-4 mb-4">
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            完善您的个人信息将有助于AI更好地优化您的简历，提高面试成功率。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 保存按钮点击事件
+      const saveBtn = document.getElementById("save-btn");
+      const infoForm = document.getElementById("info-form");
+
+      saveBtn.addEventListener("click", () => {
+        // 在实际应用中，这里应该发送表单数据到服务器
+        // 为了演示，我们直接返回到详情页
+
+        // 显示保存成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = "保存成功";
+        document.body.appendChild(toast);
+
+        // 2秒后跳转
+        setTimeout(() => {
+          window.location.href = "detail.html";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

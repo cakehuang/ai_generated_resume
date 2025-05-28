@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>服务详情 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-36 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="list.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium" id="service-title">服务详情</h1>
+      </div>
+    </div>
+
+    <!-- 服务信息 -->
+    <div class="bg-white shadow-sm">
+      <div class="px-4 py-5">
+        <div class="flex items-center">
+          <div
+            class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mr-3"
+            id="service-icon-container"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              id="service-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-lg font-medium text-gray-900" id="service-name">
+              简历基础优化
+            </h2>
+            <p class="text-gray-600 text-sm mt-1" id="service-desc">
+              AI自动优化简历内容，提升简历质量
+            </p>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center">
+          <div class="text-purple-600 text-xl font-medium" id="service-price">
+            ¥29.9
+          </div>
+          <span class="text-xs text-gray-500 ml-1" id="service-unit">/ 次</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 服务详情 -->
+    <div class="px-4 mt-4">
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="text-base font-medium text-gray-900 mb-3">服务介绍</h3>
+        <div class="text-sm text-gray-600 space-y-3" id="service-detail">
+          <p>AI简历基础优化服务能够智能分析您的简历内容，自动优化以下方面：</p>
+          <div class="pl-4">
+            <p>• 语法和表达优化，让文字更加流畅专业</p>
+            <p>• 内容结构调整，突出重点成就和能力</p>
+            <p>• 关键词优化，提高简历与职位的匹配度</p>
+            <p>• 排版美化，使简历更加清晰易读</p>
+          </div>
+          <p>
+            基础优化服务适合所有求职者，尤其是对简历内容不太满意或想要提升简历质量的用户。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 服务优势 -->
+    <div class="px-4 mt-4">
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="text-base font-medium text-gray-900 mb-3">服务优势</h3>
+        <div class="space-y-3">
+          <!-- 优势项 -->
+          <div class="flex items-start">
+            <div
+              class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-purple-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-medium text-gray-900">智能分析</h4>
+              <p class="text-xs text-gray-600 mt-1">
+                AI技术分析简历内容，找出优化点
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div
+              class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-purple-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-medium text-gray-900">高效便捷</h4>
+              <p class="text-xs text-gray-600 mt-1">
+                30秒内完成简历优化，节省您的宝贵时间
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div
+              class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-purple-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-medium text-gray-900">专业可靠</h4>
+              <p class="text-xs text-gray-600 mt-1">
+                基于行业标准和HR反馈训练的AI模型
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 购买数量 -->
+    <div class="px-4 mt-4">
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="text-base font-medium text-gray-900 mb-3">购买数量</h3>
+        <div class="flex items-center">
+          <button
+            class="w-8 h-8 border border-gray-300 rounded-full flex items-center justify-center"
+            id="decrease-btn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20 12H4"
+              />
+            </svg>
+          </button>
+          <div class="mx-4 text-base font-medium w-6 text-center" id="quantity">
+            1
+          </div>
+          <button
+            class="w-8 h-8 border border-gray-300 rounded-full flex items-center justify-center"
+            id="increase-btn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部购买栏 -->
+    <div
+      class="fixed bottom-16 left-0 right-0 h-14 bg-white border-t border-gray-200 flex items-center px-4"
+    >
+      <div class="flex-1">
+        <div class="text-xs text-gray-500">总计</div>
+        <div class="text-lg font-medium text-purple-600" id="total-price">
+          ¥29.9
+        </div>
+      </div>
+      <a
+        href="payment.html"
+        class="bg-purple-600 text-white py-2.5 px-6 rounded-md text-sm font-medium"
+        >立即购买</a
+      >
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 获取URL参数
+      const getUrlParam = (name) => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        return urlParams.get(name);
+      };
+
+      // 服务类型
+      const serviceType = getUrlParam("type") || "basic";
+
+      // 服务数据
+      const serviceData = {
+        basic: {
+          name: "简历基础优化",
+          desc: "AI自动优化简历内容，提升简历质量",
+          price: 29.9,
+          unit: "/ 次",
+          iconBg: "bg-purple-100",
+          iconColor: "text-purple-600",
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+          detail: `
+            <p>AI简历基础优化服务能够智能分析您的简历内容，自动优化以下方面：</p>
+            <div class="pl-4 mt-2">
+              <p>• 语法和表达优化，让文字更加流畅专业</p>
+              <p>• 内容结构调整，突出重点成就和能力</p>
+              <p>• 关键词优化，提高简历与职位的匹配度</p>
+              <p>• 排版美化，使简历更加清晰易读</p>
+            </div>
+            <p class="mt-2">基础优化服务适合所有求职者，尤其是对简历内容不太满意或想要提升简历质量的用户。</p>
+          `,
+        },
+        pro: {
+          name: "简历进阶优化",
+          desc: "高级AI定制，针对特定岗位量身定制简历内容",
+          price: 59.9,
+          unit: "/ 次",
+          iconBg: "bg-amber-100",
+          iconColor: "text-amber-500",
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />`,
+          detail: `
+            <p>简历进阶优化是我们的高级定制服务，由AI与专业简历顾问合作完成：</p>
+            <div class="pl-4 mt-2">
+              <p>• 针对特定岗位和行业进行深度定制</p>
+              <p>• 突出与目标职位相关的核心技能和经验</p>
+              <p>• 添加行业专业术语，提升专业度</p>
+              <p>• 优化工作成就描述，量化成果展示</p>
+              <p>• 简历ATS系统适配性优化</p>
+            </div>
+            <p class="mt-2">进阶优化服务特别适合竞争激烈岗位的求职者，或需要转行的专业人士。</p>
+          `,
+        },
+        template: {
+          name: "精选简历模板",
+          desc: "多种专业设计模板，满足不同行业需求",
+          price: 39.9,
+          unit: "/ 套",
+          iconBg: "bg-emerald-100",
+          iconColor: "text-emerald-500",
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />`,
+          detail: `
+            <p>精选简历模板包含20+套精心设计的专业模板：</p>
+            <div class="pl-4 mt-2">
+              <p>• 适合不同行业的专业设计</p>
+              <p>• 优化的排版和布局，提高阅读体验</p>
+              <p>• 清晰的视觉层次，突出重点信息</p>
+              <p>• 支持多种格式导出(Word, PDF)</p>
+              <p>• 支持个性化颜色调整</p>
+            </div>
+            <p class="mt-2">模板套餐购买后永久有效，可以无限次使用所有模板。</p>
+          `,
+        },
+        vip: {
+          name: "会员服务",
+          desc: "一个月内不限次数使用所有优化服务",
+          price: 99.9,
+          unit: "/ 月",
+          iconBg: "bg-sky-100",
+          iconColor: "text-sky-500",
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+          detail: `
+            <p>会员服务是我们最具性价比的选择，包含：</p>
+            <div class="pl-4 mt-2">
+              <p>• 30天内不限次数使用基础优化和进阶优化</p>
+              <p>• 全部模板免费使用</p>
+              <p>• 优先客服支持</p>
+              <p>• 简历专家一对一指导（1次）</p>
+              <p>• 面试技巧指南</p>
+            </div>
+            <p class="mt-2">适合正在积极求职的用户，需要频繁优化简历针对不同职位申请。</p>
+          `,
+        },
+      };
+
+      // 更新服务信息
+      const updateServiceInfo = () => {
+        const service = serviceData[serviceType];
+        if (!service) return;
+
+        document.getElementById("service-title").textContent = service.name;
+        document.getElementById("service-name").textContent = service.name;
+        document.getElementById("service-desc").textContent = service.desc;
+        document.getElementById(
+          "service-price"
+        ).textContent = `¥${service.price}`;
+        document.getElementById("service-unit").textContent = service.unit;
+
+        // 更新图标
+        const iconContainer = document.getElementById("service-icon-container");
+        iconContainer.className = `w-16 h-16 ${service.iconBg} rounded-lg flex items-center justify-center mr-3`;
+
+        const icon = document.getElementById("service-icon");
+        icon.className = `h-8 w-8 ${service.iconColor}`;
+        icon.innerHTML = service.icon;
+
+        // 更新详情
+        document.getElementById("service-detail").innerHTML = service.detail;
+
+        // 更新总价
+        updateTotalPrice();
+      };
+
+      // 数量和总价
+      let quantity = 1;
+
+      // 更新总价
+      const updateTotalPrice = () => {
+        const service = serviceData[serviceType];
+        if (!service) return;
+
+        const total = (service.price * quantity).toFixed(1);
+        document.getElementById("total-price").textContent = `¥${total}`;
+      };
+
+      // 减少数量
+      document.getElementById("decrease-btn").addEventListener("click", () => {
+        if (quantity > 1) {
+          quantity--;
+          document.getElementById("quantity").textContent = quantity;
+          updateTotalPrice();
+        }
+      });
+
+      // 增加数量
+      document.getElementById("increase-btn").addEventListener("click", () => {
+        quantity++;
+        document.getElementById("quantity").textContent = quantity;
+        updateTotalPrice();
+      });
+
+      // 初始化
+      updateServiceInfo();
+    </script>
+  </body>
+</html>

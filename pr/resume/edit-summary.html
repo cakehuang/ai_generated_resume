@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑自我评价 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="detail.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">编辑自我评价</h1>
+        <button
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+          id="save-btn"
+        >
+          保存
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单内容 -->
+    <div class="px-4 mt-4">
+      <form id="summary-form">
+        <!-- 使用AI帮助编写按钮 -->
+        <div class="mb-4">
+          <button
+            type="button"
+            id="ai-help-btn"
+            class="w-full bg-purple-600 text-white py-3 rounded-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+            使用AI助手帮助编写
+          </button>
+        </div>
+
+        <!-- 自我评价卡片 -->
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">职业背景</h2>
+          </div>
+          <div class="p-4">
+            <textarea
+              id="career-background"
+              name="career-background"
+              rows="4"
+              placeholder="请简要描述您的职业背景，包括您的行业经验和专业发展历程"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+拥有5年互联网产品经验，专注于用户体验和产品策略。曾主导多个从0到1的产品设计和迭代，对产品生命周期管理有深刻理解。熟悉敏捷开发流程，善于跨部门协作。</textarea
+            >
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">专业优势</h2>
+          </div>
+          <div class="p-4">
+            <textarea
+              id="professional-strengths"
+              name="professional-strengths"
+              rows="4"
+              placeholder="请描述您的核心专业技能和优势"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+精通产品需求分析、用户研究和产品规划，擅长通过数据分析指导产品决策。对市场趋势有敏锐洞察力，能快速理解用户需求并转化为产品功能。掌握原型设计工具如Figma、Axure，能高效与设计和开发团队协作。</textarea
+            >
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">管理能力</h2>
+          </div>
+          <div class="p-4">
+            <textarea
+              id="management-skills"
+              name="management-skills"
+              rows="4"
+              placeholder="请描述您的管理经验和领导能力"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+有效管理过5人产品团队，制定明确的工作目标和绩效指标。善于激励团队成员，提高团队凝聚力和工作效率。具备出色的项目管理能力，确保项目按时高质量交付。</textarea
+            >
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">学习能力</h2>
+          </div>
+          <div class="p-4">
+            <textarea
+              id="learning-ability"
+              name="learning-ability"
+              rows="4"
+              placeholder="请描述您的学习能力和适应新环境的能力"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+具备快速学习能力，善于适应新技术和行业变化。保持持续学习的习惯，定期参加行业研讨会和在线课程。对新兴技术如AI和区块链有浓厚兴趣，并积极探索其在产品中的应用可能。</textarea
+            >
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">商业能力</h2>
+          </div>
+          <div class="p-4">
+            <textarea
+              id="business-skills"
+              name="business-skills"
+              rows="4"
+              placeholder="请描述您的商业敏感度和市场洞察力"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+具有较强的商业意识，能够从商业角度评估产品决策。了解产品盈利模式和市场竞争策略，帮助产品在激烈竞争中脱颖而出。善于分析用户需求与商业目标之间的平衡，确保产品既满足用户需求又符合公司战略方向。</textarea
+            >
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow mb-6">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">综合能力</h2>
+          </div>
+          <div class="p-4">
+            <textarea
+              id="comprehensive-abilities"
+              name="comprehensive-abilities"
+              rows="4"
+              placeholder="请综合描述您的其他能力和特质"
+              class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+            >
+拥有优秀的沟通协调能力，能够有效地与各部门合作推进工作。具备解决问题的思维和抗压能力，能在高压环境下保持冷静和高效。关注产品细节的同时不失对整体目标的把握，注重工作效率和结果导向。</textarea
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- AI助手弹窗 -->
+    <div
+      id="ai-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+    >
+      <div
+        class="bg-white rounded-xl p-5 w-11/12 max-w-md max-h-[90vh] overflow-y-auto"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-medium text-gray-900">AI助手</h3>
+          <button id="close-modal" class="text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="mb-4">
+          <p class="text-sm text-gray-600 mb-3">选择需要AI帮助改进的部分：</p>
+          <select
+            id="ai-section"
+            class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600 mb-3"
+          >
+            <option value="career-background">职业背景</option>
+            <option value="professional-strengths">专业优势</option>
+            <option value="management-skills">管理能力</option>
+            <option value="learning-ability">学习能力</option>
+            <option value="business-skills">商业能力</option>
+            <option value="comprehensive-abilities">综合能力</option>
+          </select>
+
+          <p class="text-sm text-gray-600 mb-2">选择语言风格：</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <button
+              type="button"
+              class="style-btn px-3 py-1 border border-purple-300 rounded-full text-xs bg-purple-50 text-purple-800"
+            >
+              专业严谨
+            </button>
+            <button
+              type="button"
+              class="style-btn px-3 py-1 border border-gray-300 rounded-full text-xs"
+            >
+              简洁直接
+            </button>
+            <button
+              type="button"
+              class="style-btn px-3 py-1 border border-gray-300 rounded-full text-xs"
+            >
+              自信积极
+            </button>
+            <button
+              type="button"
+              class="style-btn px-3 py-1 border border-gray-300 rounded-full text-xs"
+            >
+              创新思考
+            </button>
+          </div>
+
+          <button
+            type="button"
+            id="generate-btn"
+            class="w-full bg-purple-600 text-white py-2 rounded-md mb-4"
+          >
+            生成内容
+          </button>
+
+          <div
+            class="p-3 bg-gray-50 rounded-lg mb-3 hidden"
+            id="ai-result-container"
+          >
+            <p class="text-sm text-gray-900 mb-2 font-medium">AI生成结果：</p>
+            <p class="text-sm text-gray-700" id="ai-result">
+              作为一名拥有5年互联网产品经验的资深产品经理，我专注于用户体验设计与产品战略规划。我主导过多个从概念到上线的产品开发项目，对产品全生命周期管理有系统性理解。我精通产品需求收集与分析、用户研究与测试、产品路线图设计等核心能力，并熟练运用敏捷开发方法论指导团队高效协作。我擅长在复杂环境中把握产品方向，确保产品既符合用户需求又能支持业务目标。
+            </p>
+            <div class="flex justify-end mt-3">
+              <button
+                type="button"
+                id="apply-result"
+                class="px-3 py-1 bg-purple-600 text-white rounded-md text-sm"
+              >
+                应用此内容
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="px-4 mb-4">
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            提示：自我评价是展示您个人特质和专业能力的重要部分，建议结合具体事例和数据来支撑您的描述，使评价更具说服力。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 获取元素
+      const aiHelpBtn = document.getElementById("ai-help-btn");
+      const aiModal = document.getElementById("ai-modal");
+      const closeModal = document.getElementById("close-modal");
+      const generateBtn = document.getElementById("generate-btn");
+      const aiResultContainer = document.getElementById("ai-result-container");
+      const aiResult = document.getElementById("ai-result");
+      const applyResult = document.getElementById("apply-result");
+      const aiSection = document.getElementById("ai-section");
+      const saveBtn = document.getElementById("save-btn");
+      const styleBtns = document.querySelectorAll(".style-btn");
+
+      // 打开AI助手弹窗
+      aiHelpBtn.addEventListener("click", () => {
+        aiModal.classList.remove("hidden");
+        // 隐藏结果区域
+        aiResultContainer.classList.add("hidden");
+      });
+
+      // 关闭AI助手弹窗
+      closeModal.addEventListener("click", () => {
+        aiModal.classList.add("hidden");
+      });
+
+      // 选择语言风格
+      styleBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // 移除所有按钮的选中状态
+          styleBtns.forEach((b) => {
+            b.classList.remove(
+              "bg-purple-50",
+              "text-purple-800",
+              "border-purple-300"
+            );
+            b.classList.add("border-gray-300");
+          });
+
+          // 添加当前按钮的选中状态
+          btn.classList.add(
+            "bg-purple-50",
+            "text-purple-800",
+            "border-purple-300"
+          );
+          btn.classList.remove("border-gray-300");
+        });
+      });
+
+      // 生成AI内容
+      generateBtn.addEventListener("click", () => {
+        // 显示加载状态
+        generateBtn.textContent = "生成中...";
+        generateBtn.disabled = true;
+
+        // 模拟AI生成延迟
+        setTimeout(() => {
+          // 恢复按钮状态
+          generateBtn.textContent = "生成内容";
+          generateBtn.disabled = false;
+
+          // 显示结果区域
+          aiResultContainer.classList.remove("hidden");
+
+          // 根据选择的部分和风格生成不同的内容
+          const selectedSection = aiSection.value;
+          const selectedStyle = document.querySelector(
+            ".style-btn.bg-purple-50"
+          ).textContent;
+
+          // 这里只是示例，实际应用中应该调用AI接口生成内容
+          const content = getAIContent(selectedSection, selectedStyle);
+          aiResult.textContent = content;
+        }, 1500);
+      });
+
+      // 应用AI生成的内容
+      applyResult.addEventListener("click", () => {
+        const selectedSection = aiSection.value;
+        const content = aiResult.textContent;
+
+        // 将内容应用到相应的文本框
+        document.getElementById(selectedSection).value = content;
+
+        // 关闭弹窗
+        aiModal.classList.add("hidden");
+
+        // 显示成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = "内容已应用";
+        document.body.appendChild(toast);
+
+        // 2秒后移除提示
+        setTimeout(() => {
+          toast.remove();
+        }, 2000);
+      });
+
+      // 根据选择的部分和风格返回不同的AI生成内容示例
+      function getAIContent(section, style) {
+        const contents = {
+          "career-background": {
+            专业严谨:
+              "作为一名拥有5年互联网产品经验的资深产品经理，我专注于用户体验设计与产品战略规划。我主导过多个从概念到上线的产品开发项目，对产品全生命周期管理有系统性理解。我精通产品需求收集与分析、用户研究与测试、产品路线图设计等核心能力，并熟练运用敏捷开发方法论指导团队高效协作。我擅长在复杂环境中把握产品方向，确保产品既符合用户需求又能支持业务目标。",
+            简洁直接:
+              "5年互联网产品经验，主导多个产品从0到1的开发。擅长用户体验设计和产品策略制定，熟悉敏捷开发流程。带领团队完成过多个重大版本迭代，产品用户增长显著。能有效平衡用户需求与业务目标。",
+            自信积极:
+              "作为充满激情的产品经理，我在互联网行业积累了5年丰富经验，成功将多个创新想法转化为备受用户喜爱的产品。我不断挑战自我，敢于尝试新方法和技术，始终保持对产品质量的高标准追求。我相信通过团队协作和持续创新，能够打造出改变用户生活的优秀产品。",
+            创新思考:
+              "在互联网产品领域探索5年，我始终以颠覆性思维挑战传统产品设计理念。擅长发现用户未被满足的潜在需求，并将其转化为创新功能。我注重产品的情感连接和用户体验，追求产品不仅解决问题，还能带给用户惊喜和愉悦。我善于将新兴技术与产品功能融合，开创行业新标准。",
+          },
+        };
+
+        // 如果没有特定内容，返回通用内容
+        return (
+          contents[section]?.[style] ||
+          "这是AI根据您的选择生成的自我评价内容示例。在实际应用中，AI将基于您的背景、经历和职业目标，生成更加个性化的内容。"
+        );
+      }
+
+      // 保存表单
+      saveBtn.addEventListener("click", () => {
+        // 在实际应用中，这里应该发送表单数据到服务器
+        // 为了演示，我们直接返回到详情页
+
+        // 显示保存成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = "保存成功";
+        document.body.appendChild(toast);
+
+        // 2秒后跳转
+        setTimeout(() => {
+          window.location.href = "detail.html";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

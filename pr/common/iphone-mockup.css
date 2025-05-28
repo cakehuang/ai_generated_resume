@@ -1,0 +1,93 @@
+/* iPhone Mockup Styles */
+.iphone-mockup {
+  position: relative;
+  width: 430px;
+  height: 860px;
+  background-image: url('https://i.ibb.co/MR6TYVF/iphone-13-pro-mockup.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+
+.iphone-screen {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  width: 390px;
+  height: 700px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+  background-color: #fff;
+}
+
+.iphone-notch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background-color: #000;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.iphone-notch-content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 30px;
+  background-image: url('images/iphone-notch.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.iphone-statusbar {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #fff;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 12px;
+  color: #000;
+  align-items: center;
+}
+
+.statusbar-time {
+  font-weight: bold;
+}
+
+.statusbar-icons {
+  display: flex;
+  gap: 5px;
+}
+
+.prototype-frame {
+  width: 100%;
+  height: 648px;
+  border: none;
+  margin-top: 52px;
+  background-color: #fff;
+}
+
+.iphone-home-bar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 5px;
+  background-color: #000;
+  border-radius: 3px;
+} 

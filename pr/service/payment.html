@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>支付 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="javascript:history.back()" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">支付</h1>
+      </div>
+    </div>
+
+    <!-- 订单信息 -->
+    <div class="px-4 mt-4">
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="text-base font-medium text-gray-900 mb-3">订单信息</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <div class="text-sm text-gray-600">商品名称</div>
+            <div class="text-sm text-gray-900 font-medium" id="order-name">
+              简历基础优化
+            </div>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="text-sm text-gray-600">商品单价</div>
+            <div class="text-sm text-gray-900" id="order-price">¥29.9</div>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="text-sm text-gray-600">购买数量</div>
+            <div class="text-sm text-gray-900" id="order-quantity">1</div>
+          </div>
+          <div class="border-t border-gray-200 my-2"></div>
+          <div class="flex justify-between items-center">
+            <div class="text-sm text-gray-600">订单总额</div>
+            <div class="text-purple-600 font-medium" id="order-total">
+              ¥29.9
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 支付方式 -->
+    <div class="px-4 mt-4">
+      <div class="bg-white rounded-xl shadow p-4">
+        <h3 class="text-base font-medium text-gray-900 mb-3">支付方式</h3>
+        <div class="space-y-3">
+          <!-- 支付方式选项 - 微信支付 -->
+          <div
+            class="flex items-center justify-between p-3 border border-gray-200 rounded-lg payment-option active"
+            data-type="wechat"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3"
+              >
+                <svg
+                  t="1748453068623"
+                  class="h-6 w-6 text-green-600"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="3743"
+                >
+                  <path
+                    d="M0 488.96v-30.72C2.56 430.08 7.68 404.48 15.36 378.88c20.48-66.56 53.76-122.88 99.84-171.52C179.2 138.24 256 94.72 340.48 66.56c48.64-15.36 97.28-23.04 145.92-25.6 40.96-2.56 79.36 0 120.32 7.68 33.28 5.12 64 12.8 97.28 25.6 79.36 28.16 148.48 71.68 207.36 133.12 7.68 7.68 12.8 15.36 20.48 23.04-2.56 0-2.56 2.56-5.12 2.56-20.48 10.24-40.96 20.48-61.44 28.16-143.36 66.56-286.72 133.12-430.08 197.12-28.16 12.8-56.32 10.24-81.92-5.12-20.48-12.8-38.4-25.6-58.88-38.4-12.8-10.24-25.6-17.92-40.96-28.16-12.8-7.68-20.48-2.56-20.48 12.8v2.56c2.56 12.8 5.12 25.6 10.24 38.4 25.6 61.44 51.2 120.32 76.8 181.76 7.68 17.92 20.48 25.6 35.84 23.04 10.24 0 20.48-2.56 28.16-7.68 30.72-15.36 58.88-33.28 87.04-51.2 156.16-92.16 309.76-184.32 465.92-276.48 10.24-7.68 23.04-12.8 33.28-20.48 0 2.56 2.56 2.56 2.56 5.12 5.12 10.24 10.24 17.92 12.8 28.16 28.16 61.44 40.96 125.44 35.84 192-2.56 28.16-7.68 56.32-15.36 84.48-17.92 61.44-48.64 115.2-92.16 163.84-51.2 56.32-115.2 99.84-184.32 128-40.96 15.36-81.92 28.16-122.88 35.84-28.16 5.12-56.32 7.68-81.92 7.68h-46.08c-20.48-2.56-40.96-2.56-58.88-5.12-30.72-5.12-61.44-12.8-89.6-23.04H322.56c-12.8 7.68-23.04 15.36-35.84 23.04-28.16 17.92-53.76 33.28-81.92 48.64-5.12 2.56-12.8 5.12-17.92 5.12s-10.24-2.56-10.24-10.24c0-5.12 0-12.8 2.56-17.92 5.12-38.4 12.8-74.24 20.48-112.64 0-5.12 0-7.68-5.12-10.24-15.36-12.8-30.72-23.04-46.08-38.4-51.2-46.08-92.16-102.4-117.76-166.4C20.48 599.04 12.8 568.32 7.68 537.6c-2.56-12.8-2.56-25.6-2.56-40.96-5.12 0-5.12-2.56-5.12-7.68z"
+                    fill="currentColor"
+                    p-id="3744"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <div class="text-gray-900 font-medium">微信支付</div>
+                <div class="text-xs text-gray-500">推荐使用微信扫码支付</div>
+              </div>
+            </div>
+            <div
+              class="w-5 h-5 rounded-full border-2 border-purple-600 flex items-center justify-center"
+            >
+              <div class="w-3 h-3 bg-purple-600 rounded-full"></div>
+            </div>
+          </div>
+
+          <!-- 支付方式选项 - 支付宝 -->
+          <div
+            class="flex items-center justify-between p-3 border border-gray-200 rounded-lg payment-option"
+            data-type="alipay"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3"
+              >
+                <svg
+                  t="1748453461256"
+                  class="h-7 w-7 text-blue-600"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="4762"
+                >
+                  <path
+                    d="M620.544 587.264c54.272-98.304 73.728-192 73.728-192H512V326.144h216.576v-29.696H512V193.024h-98.816v103.424h-197.12v29.696h197.12v69.12H245.76v29.696h339.968c0 5.12 0 5.12-5.12 9.728 0 34.304-24.576 83.456-44.544 123.392-250.88-98.816-325.12-39.424-344.576-29.696-167.424 118.272-9.728 266.24 14.848 261.12 177.152 39.424 290.816-34.304 369.664-128 5.12 5.12 9.728 5.12 14.848 5.12 54.272 29.696 315.392 152.576 315.392 152.576v-147.968c-39.424-0.512-182.272-49.664-285.696-83.968z m-128 44.032c-123.392 157.696-270.848 108.544-295.424 98.304-58.88-14.848-78.848-123.392-5.12-157.696 123.392-39.424 231.424 5.12 310.272 44.544-5.12 10.24-9.728 14.848-9.728 14.848z"
+                    fill="currentColor"
+                    p-id="4763"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <div class="text-gray-900 font-medium">支付宝支付</div>
+                <div class="text-xs text-gray-500">使用支付宝App扫码支付</div>
+              </div>
+            </div>
+            <div
+              class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"
+            >
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+
+          <!-- 支付方式选项 - 银行卡 -->
+          <div
+            class="flex items-center justify-between p-3 border border-gray-200 rounded-lg payment-option"
+            data-type="bank"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-purple-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <line x1="2" y1="10" x2="22" y2="10" />
+                  <line x1="6" y1="15" x2="6" y2="15.01" />
+                  <line x1="10" y1="15" x2="10" y2="15.01" />
+                  <line x1="14" y1="15" x2="14" y2="15.01" />
+                  <line x1="18" y1="15" x2="18" y2="15.01" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-gray-900 font-medium">银行卡支付</div>
+                <div class="text-xs text-gray-500">使用储蓄卡或信用卡支付</div>
+              </div>
+            </div>
+            <div
+              class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center"
+            >
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部支付按钮 -->
+    <div
+      class="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center px-4"
+    >
+      <div class="flex-1">
+        <div class="text-xs text-gray-500">支付金额</div>
+        <div class="text-lg font-medium text-purple-600" id="payment-total">
+          ¥29.9
+        </div>
+      </div>
+      <button
+        id="pay-button"
+        class="bg-purple-600 text-white py-2.5 px-8 rounded-md text-sm font-medium"
+      >
+        确认支付
+      </button>
+    </div>
+
+    <!-- 支付结果模态框 -->
+    <div
+      id="payment-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-xl p-6 w-4/5 max-w-sm">
+        <div class="flex flex-col items-center">
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-green-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">支付成功</h3>
+          <p class="text-sm text-gray-600 text-center mb-6">
+            您的订单已支付成功，服务已经生效
+          </p>
+          <div class="flex space-x-3 w-full">
+            <a
+              href="../profile/orders.html"
+              class="flex-1 py-2 border border-purple-600 text-purple-600 rounded-md text-center text-sm"
+              >查看订单</a
+            >
+            <a
+              href="../home.html"
+              class="flex-1 py-2 bg-purple-600 text-white rounded-md text-center text-sm"
+              >返回首页</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 获取URL参数（从detail.html传递过来的参数）
+      const getUrlParam = (name) => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        return urlParams.get(name);
+      };
+
+      // 显示订单信息
+      const displayOrderInfo = () => {
+        // 这里应该是从上一个页面传递过来的数据
+        // 为了演示，我们使用模拟数据
+        const orderName = "简历基础优化";
+        const orderPrice = 29.9;
+        const orderQuantity = 1;
+        const orderTotal = orderPrice * orderQuantity;
+
+        document.getElementById("order-name").textContent = orderName;
+        document.getElementById("order-price").textContent = `¥${orderPrice}`;
+        document.getElementById("order-quantity").textContent = orderQuantity;
+        document.getElementById("order-total").textContent = `¥${orderTotal}`;
+        document.getElementById("payment-total").textContent = `¥${orderTotal}`;
+      };
+
+      // 支付方式选择
+      const paymentOptions = document.querySelectorAll(".payment-option");
+      paymentOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          paymentOptions.forEach((opt) => {
+            opt.classList.remove("active");
+            const radioBtn = opt.querySelector(".w-5");
+            radioBtn.classList.remove("border-purple-600");
+            radioBtn.classList.add("border-gray-300");
+
+            const radioInner = opt.querySelector(".w-3");
+            radioInner.classList.remove("bg-purple-600");
+            radioInner.classList.add("bg-white");
+          });
+
+          option.classList.add("active");
+          const radioBtn = option.querySelector(".w-5");
+          radioBtn.classList.remove("border-gray-300");
+          radioBtn.classList.add("border-purple-600");
+
+          const radioInner = option.querySelector(".w-3");
+          radioInner.classList.remove("bg-white");
+          radioInner.classList.add("bg-purple-600");
+        });
+      });
+
+      // 支付按钮点击事件
+      document.getElementById("pay-button").addEventListener("click", () => {
+        // 在实际应用中，这里应该调用支付API
+        // 为了演示，直接显示支付成功
+        document.getElementById("payment-modal").classList.remove("hidden");
+
+        // 记录支付结果（实际应用中应由后端处理）
+        localStorage.setItem(
+          "lastPayment",
+          JSON.stringify({
+            service: document.getElementById("order-name").textContent,
+            amount: document.getElementById("order-total").textContent,
+            date: new Date().toISOString(),
+            status: "success",
+          })
+        );
+      });
+
+      // 初始化
+      displayOrderInfo();
+    </script>
+  </body>
+</html>

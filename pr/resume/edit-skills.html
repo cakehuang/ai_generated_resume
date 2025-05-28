@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑专业技能 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="detail.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">编辑专业技能</h1>
+        <button
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+          id="save-btn"
+        >
+          保存
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单内容 -->
+    <div class="px-4 mt-4">
+      <form id="skills-form">
+        <!-- 当前技能列表 -->
+        <div class="bg-white rounded-xl shadow mb-4">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">我的技能</h2>
+            <p class="text-xs text-gray-500 mt-1">点击标签可删除已添加的技能</p>
+          </div>
+          <div class="p-4 flex flex-wrap gap-3" id="skills-container">
+            <div
+              class="skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center"
+            >
+              产品原型设计
+              <button type="button" class="remove-skill ml-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center"
+            >
+              需求分析
+              <button type="button" class="remove-skill ml-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center"
+            >
+              数据分析
+              <button type="button" class="remove-skill ml-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center"
+            >
+              项目管理
+              <button type="button" class="remove-skill ml-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center"
+            >
+              用户研究
+              <button type="button" class="remove-skill ml-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center"
+            >
+              敏捷开发
+              <button type="button" class="remove-skill ml-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <input
+              type="hidden"
+              name="skills-data"
+              id="skills-data"
+              value="产品原型设计,需求分析,数据分析,项目管理,用户研究,敏捷开发"
+            />
+          </div>
+        </div>
+
+        <!-- 添加新技能 -->
+        <div class="bg-white rounded-xl shadow mb-6">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">添加新技能</h2>
+          </div>
+          <div class="p-4">
+            <div class="flex">
+              <input
+                type="text"
+                id="skill-input"
+                placeholder="输入技能名称"
+                class="flex-1 border-gray-300 rounded-l-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              />
+              <button
+                type="button"
+                id="add-skill-btn"
+                class="bg-purple-600 text-white px-4 py-2 rounded-r-md"
+              >
+                添加
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 常见技能推荐 -->
+        <div class="bg-white rounded-xl shadow mb-6">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-base font-medium text-gray-900">推荐技能</h2>
+            <p class="text-xs text-gray-500 mt-1">点击添加到您的技能列表</p>
+          </div>
+          <div class="p-4 flex flex-wrap gap-3">
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              产品策略
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              用户体验
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              市场分析
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              A/B测试
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              竞品分析
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              商业分析
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              Figma
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              Axure
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              团队协作
+            </button>
+            <button
+              type="button"
+              class="recommend-skill px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+            >
+              沟通能力
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="px-4 mb-4">
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            提示：添加与目标职位相关的专业技能，能够提高简历的针对性和匹配度。推荐添加5-10个技能。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 获取元素
+      const skillsContainer = document.getElementById("skills-container");
+      const skillInput = document.getElementById("skill-input");
+      const addSkillBtn = document.getElementById("add-skill-btn");
+      const saveBtn = document.getElementById("save-btn");
+      const skillsData = document.getElementById("skills-data");
+      const recommendSkills = document.querySelectorAll(".recommend-skill");
+
+      // 删除技能标签
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".remove-skill")) {
+          const skillTag = e.target.closest(".skill-tag");
+          const skillName = skillTag.textContent.trim();
+
+          // 更新技能数据
+          const currentSkills = skillsData.value.split(",");
+          const newSkills = currentSkills.filter(
+            (skill) => skill !== skillName
+          );
+          skillsData.value = newSkills.join(",");
+
+          // 移除技能标签
+          skillTag.remove();
+        }
+      });
+
+      // 添加新技能
+      addSkillBtn.addEventListener("click", () => {
+        const skillName = skillInput.value.trim();
+        if (skillName) {
+          // 检查是否已存在
+          const currentSkills = skillsData.value
+            ? skillsData.value.split(",")
+            : [];
+          if (currentSkills.includes(skillName)) {
+            showToast("该技能已添加");
+            return;
+          }
+
+          // 添加技能
+          addSkill(skillName);
+          skillInput.value = "";
+        }
+      });
+
+      // 推荐技能点击事件
+      recommendSkills.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const skillName = btn.textContent.trim();
+
+          // 检查是否已存在
+          const currentSkills = skillsData.value
+            ? skillsData.value.split(",")
+            : [];
+          if (currentSkills.includes(skillName)) {
+            showToast("该技能已添加");
+            return;
+          }
+
+          // 添加技能
+          addSkill(skillName);
+
+          // 修改推荐按钮样式，表示已添加
+          btn.classList.remove(
+            "bg-gray-100",
+            "text-gray-700",
+            "hover:bg-gray-200"
+          );
+          btn.classList.add("bg-green-50", "text-green-700");
+          btn.disabled = true;
+        });
+      });
+
+      // 添加技能函数
+      function addSkill(skillName) {
+        // 添加技能数据
+        const currentSkills = skillsData.value
+          ? skillsData.value.split(",")
+          : [];
+        currentSkills.push(skillName);
+        skillsData.value = currentSkills.join(",");
+
+        // 添加技能标签
+        const skillTag = document.createElement("div");
+        skillTag.className =
+          "skill-tag px-3 py-1.5 bg-purple-50 text-purple-800 rounded-full text-sm flex items-center";
+        skillTag.innerHTML = `
+          ${skillName}
+          <button type="button" class="remove-skill ml-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        `;
+        skillsContainer.appendChild(skillTag);
+      }
+
+      // 显示提示信息
+      function showToast(message) {
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          toast.remove();
+        }, 2000);
+      }
+
+      // 保存表单
+      saveBtn.addEventListener("click", () => {
+        // 在实际应用中，这里应该发送表单数据到服务器
+        // 为了演示，我们直接返回到详情页
+
+        // 显示保存成功提示
+        showToast("保存成功");
+
+        // 2秒后跳转
+        setTimeout(() => {
+          window.location.href = "detail.html";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

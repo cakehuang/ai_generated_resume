@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录/注册 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 添加Font Awesome图标库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .h-11 {
+        height: 2.75rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col justify-center px-4">
+    <div class="max-w-md mx-auto w-full">
+      <!-- Logo部分 -->
+      <div class="text-center mb-6">
+        <h1 class="text-2xl text-purple-600 font-medium mb-2">AI简历生成</h1>
+        <p class="text-gray-600">让简历创建更智能、更高效</p>
+      </div>
+
+      <!-- 登录表单 - 移除卡片背景和阴影 -->
+      <div class="p-2">
+        <form action="home.html">
+          <div class="mb-4">
+            <label for="phone" class="block text-gray-600 mb-2">手机号码</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="请输入手机号码"
+              class="w-full h-11 px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="password" class="block text-gray-600 mb-2">密码</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="请输入密码"
+              class="w-full h-11 px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-600 focus:border-purple-600"
+            />
+          </div>
+
+          <div class="flex justify-between items-center mt-3 text-sm">
+            <label class="text-gray-600 flex items-center">
+              <input type="checkbox" class="mr-1" /> 记住我
+            </label>
+            <a href="#" class="text-purple-600">忘记密码？</a>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-purple-600 text-white h-11 rounded-md font-medium mt-4 hover:bg-purple-700 transition"
+          >
+            登录
+          </button>
+        </form>
+
+        <!-- 其他登录方式 - 只保留微信 -->
+        <div class="mt-6 text-center">
+          <p class="text-gray-600 relative mb-3">
+            <span class="relative z-10 bg-gray-50 px-2">其他</span>
+            <span
+              class="absolute top-1/2 left-0 right-0 h-px bg-gray-200 -z-0"
+            ></span>
+          </p>
+          <div class="flex justify-center">
+            <div
+              class="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center border border-gray-200 text-green-500 hover:bg-green-50 cursor-pointer"
+            >
+              <!-- 使用Font Awesome的微信图标 -->
+              <i class="fab fa-weixin text-2xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注册链接 -->
+      <div class="text-center mt-6 text-gray-600 text-sm">
+        还没有账号？<a href="register.html" class="text-purple-600">立即注册</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI简历生成应用 - 原型</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+          "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #3b82f6;
+      }
+
+      .prototype-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .prototype-item {
+        position: relative;
+        width: 430px;
+        margin: 0 auto;
+      }
+
+      /* iPhone Mockup Styles */
+      .iphone-mockup {
+        position: relative;
+        width: 430px;
+        height: 860px;
+        border: 15px solid #1d1d1f;
+        border-width: 15px 15px;
+        border-radius: 60px;
+        background-color: #000;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+          0 0 0 1px rgba(255, 255, 255, 0.05),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+      }
+
+      .iphone-mockup:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 45px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        z-index: 11;
+        pointer-events: none;
+      }
+
+      .iphone-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 45px;
+        overflow: hidden;
+      }
+
+      /* 刘海区域容器 */
+      .iphone-notch-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 35px;
+        overflow: visible;
+        z-index: 20;
+      }
+
+      /* 主状态栏区域 */
+      .iphone-statusbar-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 35px;
+        background-color: #fff;
+        z-index: 9;
+      }
+
+      /* 实际刘海元素 */
+      .iphone-notch {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 155px;
+        height: 30px;
+        background-color: #000;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        z-index: 20;
+        overflow: hidden;
+      }
+
+      /* 刘海内部元素 */
+      .notch-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* 听筒/扬声器 */
+      .notch-speaker {
+        position: absolute;
+        top: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 36px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 4px;
+      }
+
+      /* 前置摄像头 */
+      .notch-camera {
+        position: absolute;
+        top: 7px;
+        right: 40px;
+        width: 7px;
+        height: 7px;
+        background-color: #222;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px #444;
+      }
+
+      /* 传感器 */
+      .notch-sensor {
+        position: absolute;
+        top: 8px;
+        left: 40px;
+        width: 5px;
+        height: 5px;
+        background-color: #222;
+        border-radius: 50%;
+      }
+
+      .iphone-statusbar {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 100%;
+        height: 25px;
+        background-color: #fff;
+        z-index: 9;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+        font-size: 14px;
+        color: #000;
+        font-weight: 600;
+        align-items: center;
+      }
+
+      .statusbar-time {
+        font-weight: 600;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      .statusbar-icons {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+
+      .statusbar-icon {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      /* 移动运营商信号图标 */
+      .icon-signal {
+        width: 18px;
+        height: 12px;
+        position: relative;
+        margin-top: -1px;
+      }
+
+      .icon-signal:before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 5px;
+        background-color: #000;
+        bottom: 0;
+        left: 0;
+        border-radius: 1px;
+      }
+
+      .icon-signal:after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 8px;
+        background-color: #000;
+        bottom: 0;
+        left: 5px;
+        border-radius: 1px;
+      }
+
+      .icon-signal span {
+        position: absolute;
+        width: 3px;
+        height: 11px;
+        background-color: #000;
+        bottom: 0;
+        left: 10px;
+        border-radius: 1px;
+      }
+
+      .icon-signal span:last-child {
+        height: 14px;
+        left: 15px;
+      }
+
+      /* 完全重新设计WiFi图标，采用真实iOS的形状 */
+      .icon-wifi {
+        position: relative;
+        width: 20px;
+        height: 15px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: -4px;
+      }
+
+      .icon-wifi svg {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 1px;
+      }
+
+      /* 电池图标 */
+      .icon-battery {
+        width: 24px;
+        height: 11px;
+        border: 1.5px solid #000;
+        border-radius: 2.5px;
+        position: relative;
+        margin-left: 4px;
+        margin-top: -1px;
+        box-sizing: border-box;
+      }
+
+      .icon-battery:before {
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 7px;
+        background-color: #000;
+        left: 1px;
+        top: 1px;
+        border-radius: 1px;
+      }
+
+      .icon-battery:after {
+        content: "";
+        position: absolute;
+        width: 1.5px;
+        height: 3.5px;
+        background-color: #000;
+        right: -3px;
+        top: 2.75px;
+        border-radius: 0 1px 1px 0;
+      }
+
+      .prototype-frame {
+        width: 100%;
+        height: calc(100% - 85px);
+        border: none;
+        margin-top: 60px;
+        background-color: #fff;
+      }
+
+      .page-list {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .page-button {
+        background-color: white;
+        border: 1px solid #3b82f6;
+        color: #3b82f6;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
+      }
+
+      .page-button:hover {
+        background-color: #3b82f6;
+        color: white;
+      }
+
+      .page-button.active {
+        background-color: #3b82f6;
+        color: white;
+      }
+
+      .iphone-home-bar {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 5px;
+        background-color: #000;
+        border-radius: 3px;
+      }
+
+      .device-label {
+        text-align: center;
+        font-size: 16px;
+        color: #444;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      .iphone-button {
+        position: absolute;
+        width: 3px;
+        height: 40px;
+        background-color: #121212;
+        right: -3px;
+        top: 140px;
+        border-radius: 2px;
+      }
+
+      .iphone-button.silent {
+        height: 25px;
+        top: 100px;
+      }
+
+      .iphone-button.volume-up {
+        top: 180px;
+      }
+
+      .iphone-button.volume-down {
+        top: 230px;
+      }
+
+      .iphone-button.power {
+        left: -3px;
+        top: 180px;
+      }
+
+      .device-rotate-hint {
+        text-align: center;
+        color: #666;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 480px) {
+        .prototype-item {
+          transform: scale(0.8);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AI简历生成应用 - 原型</h1>
+
+    <div class="page-list">
+      <button class="page-button active" data-page="login.html">登录</button>
+      <button class="page-button" data-page="register.html">注册</button>
+      <button class="page-button" data-page="home.html">首页</button>
+      <button class="page-button" data-page="resume/list.html">简历列表</button>
+      <button class="page-button" data-page="resume/detail.html">
+        简历详情
+      </button>
+      <button class="page-button" data-page="resume/optimize.html">
+        简历优化
+      </button>
+      <button class="page-button" data-page="resume/optimize-result.html">
+        优化结果
+      </button>
+      <button class="page-button" data-page="resume/edit-info.html">
+        编辑个人信息
+      </button>
+      <button class="page-button" data-page="resume/edit-education.html">
+        编辑教育背景
+      </button>
+      <button class="page-button" data-page="resume/edit-summary.html">
+        编辑自我评价
+      </button>
+      <button class="page-button" data-page="resume/edit-work.html">
+        编辑工作经历
+      </button>
+      <button class="page-button" data-page="resume/edit-project.html">
+        编辑项目经历
+      </button>
+      <button class="page-button" data-page="resume/edit-skills.html">
+        编辑专业技能
+      </button>
+      <button class="page-button" data-page="resume/edit-intention.html">
+        求职意向
+      </button>
+      <button class="page-button" data-page="service/list.html">
+        服务列表
+      </button>
+      <button class="page-button" data-page="service/detail.html">
+        服务详情
+      </button>
+      <button class="page-button" data-page="service/payment.html">
+        支付页面
+      </button>
+      <button class="page-button" data-page="profile/index.html">
+        个人中心
+      </button>
+      <button class="page-button" data-page="profile/orders.html">
+        我的订单
+      </button>
+      <button class="page-button" data-page="profile/services.html">
+        我的服务
+      </button>
+    </div>
+
+    <div class="device-label">iPhone 13 Pro</div>
+
+    <div class="prototype-container">
+      <div class="prototype-item">
+        <div class="iphone-mockup">
+          <div class="iphone-button silent"></div>
+          <div class="iphone-button volume-up"></div>
+          <div class="iphone-button volume-down"></div>
+          <div class="iphone-button power"></div>
+          <div class="iphone-screen">
+            <div class="iphone-notch-container">
+              <div class="iphone-statusbar-bg"></div>
+              <div class="iphone-notch">
+                <div class="notch-content">
+                  <div class="notch-speaker"></div>
+                  <div class="notch-camera"></div>
+                  <div class="notch-sensor"></div>
+                </div>
+              </div>
+            </div>
+            <div class="iphone-statusbar">
+              <div class="statusbar-time">14:21</div>
+              <div class="statusbar-icons">
+                <div class="statusbar-icon icon-signal">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="statusbar-icon icon-wifi">
+                  <svg
+                    viewBox="0 0 16 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="15"
+                  >
+                    <!-- 底部圆点 -->
+                    <circle cx="8" cy="10" r="1.2" fill="black" />
+                    <!-- 中间弧形 - 增加线条粗细 -->
+                    <path
+                      d="M5 7.5C5 7.5 6.2 5.8 8 5.8C9.8 5.8 11 7.5 11 7.5"
+                      stroke="black"
+                      stroke-width="1.5"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                    <!-- 外层弧形 - 增加线条粗细 -->
+                    <path
+                      d="M2.5 5C2.5 5 4.8 3 8 3C11.2 3 13.5 5 13.5 5"
+                      stroke="black"
+                      stroke-width="1.5"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <div class="statusbar-icon icon-battery"></div>
+              </div>
+            </div>
+            <iframe
+              id="prototype-frame"
+              class="prototype-frame"
+              src="login.html"
+            ></iframe>
+            <div class="iphone-home-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const frame = document.getElementById("prototype-frame");
+        const buttons = document.querySelectorAll(".page-button");
+
+        // Update status bar time every minute
+        function updateTime() {
+          const now = new Date();
+          const hours = now.getHours().toString().padStart(2, "0");
+          const minutes = now.getMinutes().toString().padStart(2, "0");
+          document.querySelector(
+            ".statusbar-time"
+          ).textContent = `${hours}:${minutes}`;
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000);
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const page = this.getAttribute("data-page");
+            frame.src = page;
+
+            // 更新按钮状态
+            buttons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

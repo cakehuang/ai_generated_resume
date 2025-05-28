@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简历优化 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-32 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="list.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">简历优化</h1>
+      </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="px-4 mt-4">
+      <!-- 优化级别选择 -->
+      <div class="bg-white rounded-xl shadow p-4 mb-4">
+        <h2 class="text-base font-medium text-gray-900 mb-3">选择优化级别</h2>
+
+        <!-- 基础优化 -->
+        <div class="border border-purple-600 rounded-lg p-4 mb-3">
+          <div class="flex items-start">
+            <div class="w-5 h-5 mt-0.5">
+              <input
+                type="radio"
+                name="optimize-level"
+                id="basic"
+                checked
+                class="w-5 h-5 text-purple-600 border-gray-300 focus:ring-purple-500"
+              />
+            </div>
+            <label for="basic" class="ml-3 flex-1">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-medium text-gray-900">基础优化</span>
+                <span class="text-sm text-purple-600">剩余次数：2</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                AI自动优化简历内容，包括语法修正、措辞改进、内容丰富等，提升简历质量
+              </p>
+            </label>
+          </div>
+        </div>
+
+        <!-- 进阶优化 -->
+        <div class="border border-gray-200 rounded-lg p-4">
+          <div class="flex items-start">
+            <div class="w-5 h-5 mt-0.5">
+              <input
+                type="radio"
+                name="optimize-level"
+                id="advanced"
+                class="w-5 h-5 text-purple-600 border-gray-300 focus:ring-purple-500"
+              />
+            </div>
+            <label for="advanced" class="ml-3 flex-1">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-medium text-gray-900">进阶优化</span>
+                <span class="text-sm text-purple-600">剩余次数：1</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                高级AI定制，针对特定岗位量身定制简历内容，突出与目标职位匹配的关键能力和经验
+              </p>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 模板选择 -->
+      <div class="bg-white rounded-xl shadow p-4 mb-4">
+        <h2 class="text-base font-medium text-gray-900 mb-3">选择简历模板</h2>
+
+        <div class="grid grid-cols-2 gap-3">
+          <!-- 模板1 -->
+          <div class="relative">
+            <input
+              type="radio"
+              name="template"
+              id="template1"
+              class="sr-only peer"
+              checked
+            />
+            <label
+              for="template1"
+              class="block border-2 border-gray-200 rounded-lg overflow-hidden peer-checked:border-purple-600"
+            >
+              <img
+                src="../assets/templates/template1.svg"
+                alt="简约风格"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-2 right-2 w-5 h-5 bg-white rounded-full border-2 border-gray-200 peer-checked:bg-purple-600 peer-checked:border-white"
+              ></div>
+              <div class="p-2 text-center text-xs">简约风格</div>
+            </label>
+          </div>
+
+          <!-- 模板2 -->
+          <div class="relative">
+            <input
+              type="radio"
+              name="template"
+              id="template2"
+              class="sr-only peer"
+            />
+            <label
+              for="template2"
+              class="block border-2 border-gray-200 rounded-lg overflow-hidden peer-checked:border-purple-600"
+            >
+              <img
+                src="../assets/templates/template2.svg"
+                alt="专业风格"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-2 right-2 w-5 h-5 bg-white rounded-full border-2 border-gray-200 peer-checked:bg-purple-600 peer-checked:border-white"
+              ></div>
+              <div class="p-2 text-center text-xs">专业风格</div>
+            </label>
+          </div>
+
+          <!-- 模板3 -->
+          <div class="relative">
+            <input
+              type="radio"
+              name="template"
+              id="template3"
+              class="sr-only peer"
+            />
+            <label
+              for="template3"
+              class="block border-2 border-gray-200 rounded-lg overflow-hidden peer-checked:border-purple-600"
+            >
+              <img
+                src="../assets/templates/template3.svg"
+                alt="创意风格"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-2 right-2 w-5 h-5 bg-white rounded-full border-2 border-gray-200 peer-checked:bg-purple-600 peer-checked:border-white"
+              ></div>
+              <div class="p-2 text-center text-xs">创意风格</div>
+            </label>
+          </div>
+
+          <!-- 模板4 -->
+          <div class="relative">
+            <input
+              type="radio"
+              name="template"
+              id="template4"
+              class="sr-only peer"
+            />
+            <label
+              for="template4"
+              class="block border-2 border-gray-200 rounded-lg overflow-hidden peer-checked:border-purple-600"
+            >
+              <img
+                src="../assets/templates/template4.svg"
+                alt="经典风格"
+                class="w-full h-auto"
+              />
+              <div
+                class="absolute top-2 right-2 w-5 h-5 bg-white rounded-full border-2 border-gray-200 peer-checked:bg-purple-600 peer-checked:border-white"
+              ></div>
+              <div class="p-2 text-center text-xs">经典风格</div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 优化提示 -->
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3 mb-4">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            简历优化会根据您填写的个人信息、工作经历和求职意向等内容进行分析，并给出针对性的优化建议。优化后的简历可能需要您进一步调整。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部操作栏 -->
+    <div
+      class="fixed bottom-16 left-0 right-0 h-14 bg-white border-t border-gray-200 flex items-center px-4"
+    >
+      <button
+        id="optimize-btn"
+        class="w-full bg-purple-600 text-white py-2.5 rounded-md text-sm font-medium"
+      >
+        开始优化
+      </button>
+    </div>
+
+    <!-- 优化中弹窗 -->
+    <div
+      id="optimizing-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20 hidden"
+    >
+      <div class="bg-white rounded-xl p-6 w-5/6 max-w-sm text-center">
+        <div
+          class="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"
+        ></div>
+        <h3 class="text-base font-medium text-gray-900 mb-2">正在优化简历</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          AI正在分析您的简历并进行优化，请稍候...
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-1.5 mb-1">
+          <div
+            id="progress-bar"
+            class="bg-purple-600 h-1.5 rounded-full"
+            style="width: 0%"
+          ></div>
+        </div>
+        <div class="text-xs text-gray-500" id="progress-text">0%</div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 优化按钮点击事件
+      const optimizeBtn = document.getElementById("optimize-btn");
+      const optimizingModal = document.getElementById("optimizing-modal");
+      const progressBar = document.getElementById("progress-bar");
+      const progressText = document.getElementById("progress-text");
+
+      optimizeBtn.addEventListener("click", () => {
+        // 显示优化中弹窗
+        optimizingModal.classList.remove("hidden");
+
+        // 模拟进度条
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += 5;
+          progressBar.style.width = `${progress}%`;
+          progressText.textContent = `${progress}%`;
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            // 模拟优化完成后跳转
+            setTimeout(() => {
+              window.location.href = "optimize-result.html";
+            }, 500);
+          }
+        }, 300);
+      });
+
+      // 优化级别选择切换
+      const basicRadio = document.getElementById("basic");
+      const advancedRadio = document.getElementById("advanced");
+
+      basicRadio.addEventListener("change", () => {
+        if (basicRadio.checked) {
+          basicRadio.parentElement.parentElement.parentElement.classList.remove(
+            "border-gray-200"
+          );
+          basicRadio.parentElement.parentElement.parentElement.classList.add(
+            "border-purple-600"
+          );
+          advancedRadio.parentElement.parentElement.parentElement.classList.remove(
+            "border-purple-600"
+          );
+          advancedRadio.parentElement.parentElement.parentElement.classList.add(
+            "border-gray-200"
+          );
+        }
+      });
+
+      advancedRadio.addEventListener("change", () => {
+        if (advancedRadio.checked) {
+          advancedRadio.parentElement.parentElement.parentElement.classList.remove(
+            "border-gray-200"
+          );
+          advancedRadio.parentElement.parentElement.parentElement.classList.add(
+            "border-purple-600"
+          );
+          basicRadio.parentElement.parentElement.parentElement.classList.remove(
+            "border-purple-600"
+          );
+          basicRadio.parentElement.parentElement.parentElement.classList.add(
+            "border-gray-200"
+          );
+        }
+      });
+
+      // 模板选择切换
+      const templateRadios = document.querySelectorAll(
+        'input[name="template"]'
+      );
+
+      templateRadios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          // 更新所有模板项的样式
+          templateRadios.forEach((r) => {
+            const label = r.nextElementSibling;
+            const indicator = label.querySelector("div.absolute");
+
+            if (r.checked) {
+              // 选中状态
+              label.classList.remove("border-gray-200");
+              label.classList.add("border-purple-600");
+              indicator.classList.remove("bg-white", "border-gray-200");
+              indicator.classList.add("bg-purple-600", "border-white");
+            } else {
+              // 非选中状态
+              label.classList.remove("border-purple-600");
+              label.classList.add("border-gray-200");
+              indicator.classList.remove("bg-purple-600", "border-white");
+              indicator.classList.add("bg-white", "border-gray-200");
+            }
+          });
+        });
+      });
+
+      // 初始化模板选择状态
+      document.addEventListener("DOMContentLoaded", () => {
+        // 触发第一个模板的change事件以设置初始状态
+        const firstTemplateRadio = document.getElementById("template1");
+        if (firstTemplateRadio) {
+          const event = new Event("change");
+          firstTemplateRadio.dispatchEvent(event);
+        }
+      });
+    </script>
+  </body>
+</html>

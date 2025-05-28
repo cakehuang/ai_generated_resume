@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑教育经历 - AI简历生成应用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 pb-20 pt-14">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white shadow fixed top-0 left-0 right-0 z-10">
+      <div
+        class="h-14 flex items-center justify-center relative px-4 max-w-md mx-auto"
+      >
+        <a href="detail.html" class="absolute left-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </a>
+        <h1 class="text-lg font-medium">编辑教育经历</h1>
+        <button
+          class="absolute right-4 text-purple-600 text-sm font-medium"
+          id="save-btn"
+        >
+          保存
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单内容 -->
+    <div class="px-4 mt-4">
+      <form id="education-form">
+        <!-- 教育经历列表 -->
+        <div id="education-list">
+          <!-- 教育经历项1 -->
+          <div class="education-item bg-white rounded-xl shadow mb-4">
+            <div
+              class="p-4 border-b border-gray-100 flex justify-between items-center"
+            >
+              <h2 class="text-base font-medium text-gray-900">教育经历 1</h2>
+              <button type="button" class="delete-btn text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 学校名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="school-1" class="block text-sm text-gray-600 mb-1"
+                >学校名称</label
+              >
+              <input
+                type="text"
+                id="school-1"
+                name="school-1"
+                value="北京大学"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 专业名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="major-1" class="block text-sm text-gray-600 mb-1"
+                >专业名称</label
+              >
+              <input
+                type="text"
+                id="major-1"
+                name="major-1"
+                value="计算机科学与技术"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 学历 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="degree-1" class="block text-sm text-gray-600 mb-1"
+                >学历</label
+              >
+              <select
+                id="degree-1"
+                name="degree-1"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+                <option value="专科">专科</option>
+                <option value="本科" selected>本科</option>
+                <option value="硕士">硕士</option>
+                <option value="博士">博士</option>
+                <option value="其他">其他</option>
+              </select>
+            </div>
+
+            <!-- 就读时间 -->
+            <div class="p-4">
+              <label class="block text-sm text-gray-600 mb-2">就读时间</label>
+              <div class="flex flex-col space-y-3">
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >开始时间</label
+                  >
+                  <input
+                    type="month"
+                    id="start-date-1"
+                    name="start-date-1"
+                    value="2012-09"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >结束时间</label
+                  >
+                  <input
+                    type="month"
+                    id="end-date-1"
+                    name="end-date-1"
+                    value="2016-07"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 教育经历项2 -->
+          <div class="education-item bg-white rounded-xl shadow mb-4">
+            <div
+              class="p-4 border-b border-gray-100 flex justify-between items-center"
+            >
+              <h2 class="text-base font-medium text-gray-900">教育经历 2</h2>
+              <button type="button" class="delete-btn text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 学校名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="school-2" class="block text-sm text-gray-600 mb-1"
+                >学校名称</label
+              >
+              <input
+                type="text"
+                id="school-2"
+                name="school-2"
+                value="中央财经大学"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 专业名称 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="major-2" class="block text-sm text-gray-600 mb-1"
+                >专业名称</label
+              >
+              <input
+                type="text"
+                id="major-2"
+                name="major-2"
+                value="市场营销"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                required
+              />
+            </div>
+
+            <!-- 学历 -->
+            <div class="p-4 border-b border-gray-100">
+              <label for="degree-2" class="block text-sm text-gray-600 mb-1"
+                >学历</label
+              >
+              <select
+                id="degree-2"
+                name="degree-2"
+                class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+              >
+                <option value="专科">专科</option>
+                <option value="本科">本科</option>
+                <option value="硕士" selected>硕士</option>
+                <option value="博士">博士</option>
+                <option value="其他">其他</option>
+              </select>
+            </div>
+
+            <!-- 就读时间 -->
+            <div class="p-4">
+              <label class="block text-sm text-gray-600 mb-2">就读时间</label>
+              <div class="flex flex-col space-y-3">
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >开始时间</label
+                  >
+                  <input
+                    type="month"
+                    id="start-date-2"
+                    name="start-date-2"
+                    value="2016-09"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="text-xs text-gray-500 mb-1 block"
+                    >结束时间</label
+                  >
+                  <input
+                    type="month"
+                    id="end-date-2"
+                    name="end-date-2"
+                    value="2019-07"
+                    class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 添加教育经历按钮 -->
+        <button
+          type="button"
+          id="add-education-btn"
+          class="w-full bg-gray-100 text-gray-600 py-3 rounded-xl mb-6 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+          添加教育经历
+        </button>
+      </form>
+    </div>
+
+    <!-- 删除确认对话框 -->
+    <div
+      id="delete-confirm"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+    >
+      <div class="bg-white rounded-xl p-5 w-5/6 max-w-sm">
+        <h3 class="text-base font-medium text-gray-900 mb-3">确认删除</h3>
+        <p class="text-sm text-gray-600 mb-5">
+          确定要删除这段教育经历吗？此操作不可恢复。
+        </p>
+        <div class="flex space-x-3">
+          <button
+            id="delete-cancel"
+            class="flex-1 py-2 border border-gray-300 text-gray-700 rounded-md text-sm"
+          >
+            取消
+          </button>
+          <button
+            id="delete-confirm-btn"
+            class="flex-1 py-2 bg-red-500 text-white rounded-md text-sm"
+          >
+            确认删除
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="px-4 mb-4">
+      <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-amber-500 flex-shrink-0 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div class="text-xs text-amber-800">
+            提示：按照时间从近到远的顺序填写教育经历，正确填写学校名称和专业名称，有助于AI更准确地分析您的教育背景。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <iframe
+      src="../common/tabbar.html"
+      class="fixed bottom-0 left-0 w-full h-16 border-none"
+    ></iframe>
+
+    <script>
+      // 初始化变量
+      let currentEducationItemCount = 2;
+      let deleteTargetItem = null;
+
+      // 获取元素
+      const educationForm = document.getElementById("education-form");
+      const educationList = document.getElementById("education-list");
+      const addEducationBtn = document.getElementById("add-education-btn");
+      const saveBtn = document.getElementById("save-btn");
+      const deleteConfirm = document.getElementById("delete-confirm");
+      const deleteCancel = document.getElementById("delete-cancel");
+      const deleteConfirmBtn = document.getElementById("delete-confirm-btn");
+
+      // 添加新教育经历
+      addEducationBtn.addEventListener("click", () => {
+        currentEducationItemCount++;
+
+        const newEducationItem = document.createElement("div");
+        newEducationItem.className =
+          "education-item bg-white rounded-xl shadow mb-4";
+        newEducationItem.innerHTML = `
+          <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-base font-medium text-gray-900">教育经历 ${currentEducationItemCount}</h2>
+            <button type="button" class="delete-btn text-red-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- 学校名称 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="school-${currentEducationItemCount}" class="block text-sm text-gray-600 mb-1">学校名称</label>
+            <input type="text" id="school-${currentEducationItemCount}" name="school-${currentEducationItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" required />
+          </div>
+          
+          <!-- 专业名称 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="major-${currentEducationItemCount}" class="block text-sm text-gray-600 mb-1">专业名称</label>
+            <input type="text" id="major-${currentEducationItemCount}" name="major-${currentEducationItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600" required />
+          </div>
+          
+          <!-- 学历 -->
+          <div class="p-4 border-b border-gray-100">
+            <label for="degree-${currentEducationItemCount}" class="block text-sm text-gray-600 mb-1">学历</label>
+            <select id="degree-${currentEducationItemCount}" name="degree-${currentEducationItemCount}" class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600">
+              <option value="专科">专科</option>
+              <option value="本科" selected>本科</option>
+              <option value="硕士">硕士</option>
+              <option value="博士">博士</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          
+          <!-- 就读时间 -->
+          <div class="p-4">
+            <label class="block text-sm text-gray-600 mb-2">就读时间</label>
+            <div class="flex flex-col space-y-3">
+              <div class="w-full">
+                <label class="text-xs text-gray-500 mb-1 block">开始时间</label>
+                <input
+                  type="month"
+                  id="start-date-${currentEducationItemCount}"
+                  name="start-date-${currentEducationItemCount}"
+                  class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                />
+              </div>
+              <div class="w-full">
+                <label class="text-xs text-gray-500 mb-1 block">结束时间</label>
+                <input
+                  type="month"
+                  id="end-date-${currentEducationItemCount}"
+                  name="end-date-${currentEducationItemCount}"
+                  class="w-full border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:ring-purple-600 focus:border-purple-600"
+                />
+              </div>
+            </div>
+          </div>
+        `;
+
+        educationList.appendChild(newEducationItem);
+
+        // 添加删除按钮事件监听器
+        const deleteBtn = newEducationItem.querySelector(".delete-btn");
+        deleteBtn.addEventListener("click", (e) => {
+          showDeleteConfirm(e.target.closest(".education-item"));
+        });
+      });
+
+      // 删除按钮事件
+      document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          showDeleteConfirm(e.target.closest(".education-item"));
+        });
+      });
+
+      // 显示删除确认对话框
+      function showDeleteConfirm(educationItem) {
+        deleteTargetItem = educationItem;
+        deleteConfirm.classList.remove("hidden");
+      }
+
+      // 取消删除
+      deleteCancel.addEventListener("click", () => {
+        deleteConfirm.classList.add("hidden");
+        deleteTargetItem = null;
+      });
+
+      // 确认删除
+      deleteConfirmBtn.addEventListener("click", () => {
+        if (deleteTargetItem) {
+          deleteTargetItem.remove();
+          deleteConfirm.classList.add("hidden");
+          deleteTargetItem = null;
+
+          // 重新排序教育经历标题
+          const educationItems = document.querySelectorAll(".education-item");
+          educationItems.forEach((item, index) => {
+            const title = item.querySelector("h2");
+            title.textContent = `教育经历 ${index + 1}`;
+          });
+        }
+      });
+
+      // 保存表单
+      saveBtn.addEventListener("click", () => {
+        // 在实际应用中，这里应该发送表单数据到服务器
+        // 为了演示，我们直接返回到详情页
+
+        // 显示保存成功提示
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed top-16 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-sm z-50";
+        toast.textContent = "保存成功";
+        document.body.appendChild(toast);
+
+        // 2秒后跳转
+        setTimeout(() => {
+          window.location.href = "detail.html";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
